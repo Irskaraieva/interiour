@@ -1,0 +1,25 @@
+.offers {
+    padding: 20px 20px 0px 30px;
+
+    .offers-header {
+        font-family: var(--font-family-abel);
+        font-size: calc(18px + (48 - 18) * ((100vw - 360px) / 1400));
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .flower-wrapper {
+       position: relative;
+       height: 40px;
+
+       .mark {
+        position: absolute;
+        height: 9px;
+        z-index: 5;
+        top: 31%;
+        left: 31%;         
+       }
+    }
+
+}

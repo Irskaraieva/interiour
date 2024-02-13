@@ -1,0 +1,27 @@
+
+.logo {
+    background-color: #1E1E1E;
+    width: 100%;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+
+}
+
+.logo-text {    
+    position: relative; 
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: calc(40px + (80 - 40) * ((100vw - 320px) / 1400));
+    line-height: calc(80px + (140 - 80) * ((100vw - 320px) / 1400));
+    color: #fff;
+    z-index: 5;
+}
+
+.logo-img {
+    position: absolute;
+    width: calc(50px + (110 - 50) * ((100vw - 320px) / 1400));
+    top: 16%;
+    right: -6px;
+}

@@ -1,0 +1,37 @@
+#root {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+body {
+  --color: rgba(3, 10, 7, 0.603);
+  --bg-color: #242324;
+  --font-family: 'Inter', sans-serif;
+  --font-family-abel: 'Abel', sans-serif;
+  --font-family-lato: 'Lato', sans-serif;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: var(--font-family);
+  background-color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--bg-color);
+  border-radius: 3px;  
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #b6b5b5; /* Колір при наведенні на скролбар */
+}

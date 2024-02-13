@@ -1,0 +1,153 @@
+.nav-mob-btn {
+  --time: 0.2s;
+  --width: 35px;
+  --height: 25px;
+  --line-height: 1px;
+  --radius: 2px;
+  position: relative;
+  height: var(--height);
+  width: var(--width);
+  color: var(--color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  pointer-events: all;
+  z-index: 200;
+}
+
+.burger-line {
+  height: 3px;
+  width: 100%;
+  border-radius: var(--radius);
+  background-color: var(--color);
+  opacity: 0.9;
+  transition: transform 0.3s, opacity 0.2s, background-color 0.3s;
+}
+
+.burger-line:nth-child(2) {
+  width: 88%;
+}
+
+.burger-line:nth-child(3) {
+  width: 76%;
+}
+
+.nav-mob-btn.active div:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 15px);
+  width: 60%;
+  height: 2px;
+  background-color: #f3f8f8;
+}
+
+.nav-mob-btn.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-mob-btn.active div:nth-child(3) {
+  transform: rotate(-44deg) translate(6px, -15px);
+  width: 60%;
+  height: 2px;
+  background-color: #f3f8f8;
+}
+
+.nav-mob-btn.active {
+  border: 1px solid #f3f8f8;
+  border-radius: 50%;
+  height: 35px;
+}
+
+.mob-nav-wrapper {
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(147, 148, 148, 0.9);
+  pointer-events: none;
+  transition: all 0.4s ease-in;
+}
+
+.mob-nav-wrapper-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mob-nav {
+  position: relative;
+  margin: 0 0 0 auto;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 440px;
+  padding: 110px 60px 0;
+  background: var(--bg-color);
+  align-items: center;
+  pointer-events: all;
+  overflow: hidden;
+  z-index: 100;
+  transform: translate(100%, 0);
+  transition: transform 0.3s ease-in;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+.mob-nav-active {
+  transform: unset;
+}
+
+.mob-nav-list {
+  font-weight: 600;
+  font-size: 18px;
+
+  li {
+    border-bottom: 1px solid rgba(252, 248, 248, 0.2);
+  }
+
+  a {
+    display: block;
+    padding: 20px 0;
+    color: #e6f0ef;
+    transition: all 0.2s ease-in;
+
+    @media (max-width: 767px) {
+      padding: 15px 0;
+      font-size: 16px;
+    }
+
+    @media (min-width: 600px) {
+      &:hover {
+        padding-left: 16px;
+      }
+    }
+  }
+}
+
+.mob-socials {
+  display: flex;
+  gap: 30px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 4%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  img {
+    height: 20px;
+    width: auto;
+    transition: 0.3s;
+    opacity: 1;
+  }
+
+  a:hover img {
+    animation: jumpingImg 0.6s ease-in-out;
+    opacity: 0.6;
+  }
+}

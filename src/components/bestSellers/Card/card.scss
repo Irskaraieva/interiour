@@ -1,0 +1,118 @@
+.card {
+  border-radius: 25px;
+  width: 322px;
+  height: 364px;
+  background-color: #fff;
+  padding: 18px 18px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  .card-img {
+    position: absolute;
+    position: relative;
+    height: 258px;
+    top: -5%;
+    left: 0;
+    width: 100%;
+  }
+
+  .prod-img {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .card-description {
+    height: 134px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .stars-wrapper {
+    display: flex;
+    gap: 3px;
+
+    .star {
+      color: #d6d3d3;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: scale(1.3);
+        cursor: pointer;
+      }
+    }
+
+    .cheked {
+      color: #f2d879;
+    }
+  }
+
+  .card-bottom {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .price {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 9px;
+      width: 82px;
+      height: 37px;
+      line-height: 37px;
+      text-align: center;
+      transition: all 0.3s;
+      font-weight: 400;
+      font-size: 18px;
+    }
+
+    .shopping-bag {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 9px;
+      width: 38px;
+      height: 37px;
+      background: #f1f1f1;
+      text-align: center;
+
+      &:hover {
+        background: #d6d3d3;
+        cursor: pointer;
+      }
+
+      img {
+        width: 18px;
+      }
+    }
+  }
+  .brand-name {
+    text-transform: uppercase;
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+  .good-name-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .dots {
+      font-size: 16px;
+    }
+  }
+
+  .good-name {
+    font-family: var(--font-family-lato);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: rgba(0, 0, 0, 0.9);
+  }
+}
