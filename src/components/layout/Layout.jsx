@@ -8,7 +8,7 @@ export default function Layout() {
         <>
         <div className="content">
             <div className="content-wrapper">
-            {/* <Aside />             */}
+            <Aside />            
             <MainPage />
             <Outlet /> 
             </div>
