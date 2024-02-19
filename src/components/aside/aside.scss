@@ -1,9 +1,12 @@
 .aside {
-  max-width: 520px;
+  width: 30%;
   min-height: 100vh;
   background-color: rgba(30, 30, 30, 0.8);
   display: flex;
   flex-direction: column;
+  @media (max-width: 1000px) {
+    display: none;
+  }
 
   ::-webkit-scrollbar {
     width: 3px;
@@ -46,13 +49,21 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+
+  @media (max-width: 1700px) {
+    padding: 25px;
+  }
+
+  @media (max-width: 1360px) {
+    padding: 15px 20px;
+  }
 }
 
 .filter {
   display: flex;
   align-items: center;
-  gap: calc(8px + (22 - 8) * ((100vw - 320px) / 1400));
-  font-size: calc(16px + (32 - 16) * ((100vw - 320px) / 1400));
+  gap: calc(8px + (14 - 8) * ((100vw - 320px) / 1400));
+  font-size: calc(18px + (28 - 18) * ((100vw - 320px) / 1400));
   color: #fff;
   font-weight: bold;
 
@@ -69,7 +80,7 @@
 
 .reset-filter {
   color: #fff;
-  font-size: calc(12px + (20 - 12) * ((100vw - 320px) / 1400));
+  font-size: calc(14px + (18 - 14) * ((100vw - 320px) / 1400));
   font-weight: bold;
   border-bottom: 1px solid #fff;
   transition: all 0.3s;
@@ -81,7 +92,7 @@
 }
 
 .filter-icon {
-  font-size: calc(20px + (42 - 20) * ((100vw - 320px) / 1400));
+  font-size: calc(18px + (28 - 18) * ((100vw - 320px) / 1400));
   color: #fff;
   transition: all 0.3s;
 }

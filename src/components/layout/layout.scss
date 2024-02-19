@@ -1,9 +1,10 @@
 .content {
-   margin: 0 auto;
-   max-width: 1800px;
+  margin: 0 auto;
+  max-width: 1800px;
+  overflow: hidden;
+  background-color: #fff;
 }
 
 .content-wrapper {
-   display: flex;
+  display: flex;
 }
-

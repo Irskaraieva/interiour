@@ -32,6 +32,7 @@ const BestSellers = () => {
     const handleButtonActive = (index) => {
         setActiveButton(index);
     }
+
     const buttons = ["All Products", "Chair", "Table", "Sofa", "FootStool", "Office"];
     const listClass = visibleList ? "select is-visible" : "select";
 
@@ -79,30 +80,33 @@ const BestSellers = () => {
                     slidesPerView={2.5}
                     spaceBetween={20}
                     breakpoints={{
-                    
-                        400:{
-                          slidesPerView:1,
+                        200: {
+                            slidesPerView: 1
                         },
-                        865:{
-                          slidesPerView:2
+                        360: {
+                            slidesPerView: 1.4
                         },
-                        1000:{
-                          slidesPerView:2.5
+                        500: {
+                            slidesPerView: 2
                         },
-                        1500:{
-                          slidesPerView:3.5
+                        800: {
+                            slidesPerView: 2.5
+                        },              
+              
+                        1300: {
+                            slidesPerView: 3
                         },
-                        1700:{
-                          slidesPerView:4.5
+                        1700: {
+                            slidesPerView: 3.5
                         }
-                      }}
-                    modules={[ Navigation, Scrollbar ]}
+                    }}
+                    modules={[Navigation, Scrollbar]}
                     className="mySwiper"
                     scrollbar={{ draggable: true }}
                 >
                     {hasGoods.length > 0 ? (
-                        hasGoods.map((good, index) => {
-                            const { brand, name, price, image } = good;
+                        hasGoods.map((good) => {
+                            const {id, brand, name, price, image } = good;
                             const props = {
                                 brand,
                                 name,
@@ -110,16 +114,15 @@ const BestSellers = () => {
                                 img: image || imageDefault,
                             }
 
-                            return  <SwiperSlide>
-                                      <Card key={index} {...props} />
-                                    </SwiperSlide>
+                            return <SwiperSlide key={id}>
+                                <Card {...props} />
+                            </SwiperSlide>
                         })
                     ) : (
                         <div className="text-info">No items</div>
                     )
                     }
                 </Swiper>
-
             </div>
         </section>
     );

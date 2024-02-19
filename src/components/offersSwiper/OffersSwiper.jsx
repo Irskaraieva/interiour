@@ -111,9 +111,9 @@ const OffersSwiper = () => {
 
             </Swiper>
             <div className='custom-buttons' >
-                <div className='swiper-button-prev custom-prev' style={{ top: "47%", left: '0px' }}></div>
+                <div className='swiper-button-prev custom-prev' style={{ top: "47%", left: '12px' }}></div>
 
-                <div className='swiper-button-next custom-next' style={{ top: "47%", right: '0px' }}></div>
+                <div className='swiper-button-next custom-next' style={{ top: "47%", right: '12px' }}></div>
             </div>
         </div>
     );

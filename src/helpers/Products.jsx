@@ -32,27 +32,27 @@ const products = [
         quantity: 30
     },
     {
-        name: "Furniture",
+        name: "Furnitur",
         quantity: 102
     },
     {
-        name: "Workspace",
+        name: "Workadd",
         quantity: 40
     },
     {
-        name: "Kitchen",
+        name: "KitchenHight",
         quantity: 56
     },
     {
-        name: "Plants",
+        name: "PlantsFarm",
         quantity: 42
     },
     {
-        name: "Bathroom",
+        name: "Bathrooms",
         quantity: 63
     },
     {
-        name: "Storage",
+        name: "Storages",
         quantity: 30
     },
 ];

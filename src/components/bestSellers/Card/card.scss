@@ -1,36 +1,58 @@
 .card {
   border-radius: 25px;
-  width: 322px;
+  max-width: 322px;
+  max-height: 364px;
   height: 364px;
   background-color: #fff;
   padding: 18px 18px;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
+
+  @media (max-width: 900px) {
+    max-height: 320px;
+  }
 
   .card-img {
+    position: relative;
     position: absolute;
-    
-    height: 258px;
-    top: -13%;
-    left: 0;
+    height: 100%;
     width: 100%;
+    top: -35%;
+    left: 0;
   }
 
   .prod-img {
+    position: absolute;
+    top: 0;
+    left: -10%;
     height: 100%;
-    width: 100%;
-    object-fit: contain;
+    width: 120%;
+    object-fit: cover;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .prod-img {
+    
+      top: -1%;
+ 
+    }
   }
 
   .card-description {
+    position: absolute;
+    bottom: 20px;
     height: 134px;
-    width: 100%;
+    width: 88%;
     display: flex;
     flex-direction: column;
     gap: 5px;
     justify-content: space-between;
+    
+    @media (max-width: 900px) {
+      height: 120px;
+    }
   }
 
   .stars-wrapper {
@@ -58,6 +80,10 @@
     align-items: center;
     gap: 12px;
 
+    @media (max-width: 900px) {
+      margin-top: 2px;
+    }
+    
     .price {
       border: 1px solid rgba(0, 0, 0, 0.2);
       border-radius: 9px;
@@ -68,6 +94,13 @@
       transition: all 0.3s;
       font-weight: 400;
       font-size: 18px;
+
+      @media (max-width: 900px) {
+        width: 68px;
+        height: 32px;
+        line-height: 32px;
+        font-size: 16px;
+      }
     }
 
     .shopping-bag {
@@ -77,6 +110,10 @@
       height: 37px;
       background: #f1f1f1;
       text-align: center;
+
+      @media (max-width: 900px) {
+        height: 34px;
+      }
 
       &:hover {
         background: #d6d3d3;
@@ -88,6 +125,7 @@
       }
     }
   }
+
   .brand-name {
     text-transform: uppercase;
     font-family: var(--font-family);
@@ -112,5 +150,10 @@
     font-size: 24px;
     line-height: 32px;
     color: rgba(0, 0, 0, 0.9);
+
+    @media (max-width: 900px) {
+      font-size: 18px;
+      line-height: 24px;
+    }
   }
 }
