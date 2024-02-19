@@ -1,27 +1,52 @@
 .offers {
-    padding: 20px 20px 0px 30px;
+  padding: 20px 20px 0px 30px;
+  margin-left: 24px;
+  margin-right: 24px;
+
+  @media (max-width: 1400px) {
+    padding: 10px 0px 0px;
     margin-left: 24px;
     margin-right: 24px;
+  }
 
-    .offers-header {
-        font-family: var(--font-family-abel);
-        font-size: calc(18px + (48 - 18) * ((100vw - 360px) / 1400));
-        display: flex;
-        gap: 12px;
-        align-items: center;
+  .offers-header {
+    font-family: var(--font-family-abel);
+    font-size: calc(18px + (48 - 18) * ((100vw - 360px) / 1400));
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+    @media (max-width: 1400px) {
+      font-size: 32px;
     }
 
-    .flower-wrapper {
-       position: relative;
-       height: 40px;
+    @media (max-width: 600px) {
+      font-size: 28px;
+    }
+  }
 
-       .mark {
-        position: absolute;
-        height: 9px;
-        z-index: 5;
-        top: 31%;
-        left: 31%;         
-       }
+  .flower-wrapper {
+    position: relative;
+    height: 40px;
+
+    @media (max-width: 1400px) {
+      padding-top: 8px;
+      img {
+        height: 26px;
+      }
     }
 
+    .mark {
+      position: absolute;
+      height: 9px;
+      z-index: 5;
+      top: 31%;
+      left: 31%;
+
+      @media (max-width: 1400px) {
+        height: 7px;
+        top: 42%;
+      }
+    }
+  }
 }

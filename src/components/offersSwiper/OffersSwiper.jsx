@@ -25,6 +25,20 @@ const OffersSwiper = () => {
                     nextEl: '.custom-next',
                     prevEl: '.custom-prev',
                 }}
+                breakpoints={{
+                    200: {
+                        slidesPerView: 1
+                    },
+                    360: {
+                        slidesPerView: 1
+                    },
+                    500: {
+                        slidesPerView: 1.2
+                    },                                          
+                    700: {
+                        slidesPerView: 2
+                    }
+                }}
                 modules={[Navigation]}
                 className="mySwiper"
             >
@@ -111,9 +125,9 @@ const OffersSwiper = () => {
 
             </Swiper>
             <div className='custom-buttons' >
-                <div className='swiper-button-prev custom-prev' style={{ top: "47%", left: '12px' }}></div>
+                <div className='swiper-button-prev custom-prev'></div>
 
-                <div className='swiper-button-next custom-next' style={{ top: "47%", right: '12px' }}></div>
+                <div className='swiper-button-next custom-next'></div>
             </div>
         </div>
     );

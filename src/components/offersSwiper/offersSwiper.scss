@@ -4,13 +4,29 @@
   max-width: 800;
   position: relative;
 
+  @media (max-width: 1400px) {
+    padding: 10px 30px 20px 30px;
+  }
+
   .image-wrapper {
-    height: 417px;
+    height: 380px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
     border-radius: 27px;
+
+    @media (max-width: 1600px) {
+      max-height: 320px;
+    }
+
+    @media (max-width: 1400px) {
+      max-height: 260px;
+    }
+
+    @media (max-width: 900px) {
+      max-height: 180px;
+    }
 
     &::before {
       content: "";
@@ -30,29 +46,47 @@
     }
 
     .offers-info {
-      position: relative;      
+      position: relative;
       height: 100%;
       width: 76%;
       overflow: hidden;
       color: #fff;
       padding-left: 30px;
 
+      @media (max-width: 1600px) {
+        width: 86%;
+      }
+
       header {
         h2 {
-          font-size: calc(28px + (40 - 28) * ((100vw - 360px) / 1400));
+          font-size: calc(18px + (40 - 18) * ((100vw - 360px) / 1400));
           font-weight: bold;
           position: absolute;
-          top: 20%;
+          top: 13%;
           z-index: 5;
+
+          @media (max-width: 900px) {
+            font-size: calc(18px + (30 - 18) * ((100vw - 360px) / 1400));
+            top: 10%;
+          }
         }
       }
 
       p {
         position: absolute;
-        top: 47%;
+        overflow-y: hidden;
+        top: 41%;
         font-size: 16px;
         color: #fff;
         z-index: 5;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+
+        @media (max-width: 900px) {
+          font-size: 13px;
+        }
       }
 
       button.explore-now {
@@ -66,7 +100,14 @@
         font-size: 16px;
         font-weight: 500;
         transition: 0.3s;
-        z-index: 5;      
+        z-index: 5;
+
+        @media (max-width: 900px) {
+          top: 73%;
+          width: 130px;
+          height: 35px;
+          font-size: 14px;
+        }
 
         &:hover {
           background: rgba(214, 104, 1, 0.9);
@@ -75,11 +116,11 @@
     }
 
     .discount-info {
-        position: relative;
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-        color: #fff;
+      position: relative;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      color: #fff;
 
       header {
         z-index: 5;
@@ -90,7 +131,11 @@
         h2 {
           font-size: calc(18px + (40 - 18) * ((100vw - 360px) / 1400));
           font-weight: bold;
-          position: relative;          
+          position: relative;
+
+          @media (max-width: 900px) {
+            font-size: calc(18px + (30 - 18) * ((100vw - 360px) / 1400));
+          }
         }
 
         span {
@@ -99,13 +144,27 @@
         }
       }
 
-      p {              
+      p {
         display: flex;
+        justify-content: flex-end;
         position: absolute;
-        top: 50%;
-        right: 18%;    
-        gap: 13px;
+        overflow: hidden;
+        flex-wrap: nowrap;
+        height: 24px;
+        top: 55%;
+        right: 18%;
         z-index: 5;
+
+        @media (max-width: 1600px) {
+          top: 65%;
+        }
+
+        @media (max-width: 900px) {
+          font-size: 14px;
+          height: 20px;
+          top: 75%;
+          right: 8%;
+        }
 
         .discount-arrow {
           display: flex;
@@ -114,18 +173,28 @@
           height: 24px;
           background-color: black;
           border-radius: 50%;
-          transition: all .3s;
-          
+          transition: all 0.3s;
+          margin-right: 10px;
+
+          @media (max-width: 900px) {
+            width: 18px;
+            height: 18px;
+          }
+
           &:hover {
             background-color: rgb(24, 24, 24);
           }
-          
+
           img {
             height: 5px;
             width: 10px;
             margin: 2px auto 0px auto;
             stroke: #fff;
             transform: rotate(180deg);
+
+            @media (max-width) {
+              margin: 0 auto;
+            }
           }
         }
       }
@@ -139,6 +208,21 @@
     border-radius: 50%;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 0 5px rgb(92, 92, 92);
+
+    @media (max-width: 1600px) {
+      width: 60px;
+      height: 60px;
+    }
+
+    @media (max-width: 1400px) {
+      width: 50px;
+      height: 50px;
+    }
+
+    @media (max-width: 900px) {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   .swiper-button-prev.swiper-button-disabled {
@@ -155,13 +239,48 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+
+    @media (max-width: 1400px) {
+      width: 30px;
+      height: 30px;
+    }
+
+    @media (max-width: 900px) {
+      width: 20px;
+      height: 20px;
+    }
   }
 
-  .swiper-button-prev::after {
-    background-image: url("../../images/photo-content/arrow-left.svg");
+  .swiper-button-prev {
+    top: 47%;
+    left: 12px;
+
+    &::after {
+      background-image: url("../../images/photo-content/arrow-left.svg");
+    }
+
+    @media (max-width: 1600px) {
+      left: 24px;
+    }
+    @media (max-width: 1400px) {
+      left: 10px;
+    }
   }
 
-  .swiper-button-next::after {
-    background-image: url("../../images/photo-content/arrow-right.svg");
+  .swiper-button-next {
+    top: 47%;
+    right: 12px;
+
+    &::after {
+      background-image: url("../../images/photo-content/arrow-right.svg");
+    }
+
+    @media (max-width: 1600px) {
+      right: 24px;
+    }
+
+    @media (max-width: 1400px) {
+      right: 10px;
+    }
   }
 }

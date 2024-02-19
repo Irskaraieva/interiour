@@ -6,11 +6,23 @@
     justify-content: space-between;
     align-items: flex-end;
     padding: 0px 54px;
-   
+
+    @media (max-width: 1400px) {
+      padding: 0px 30px 20px 30px;
+    }
+
     h2 {
       font-family: var(--font-family-abel);
       font-size: calc(18px + (48 - 18) * ((100vw - 360px) / 1400));
       line-height: calc(18px + (48 - 18) * ((100vw - 360px) / 1400));
+
+      @media (max-width: 1400px) {
+        font-size: 32px;
+      }
+
+      @media (max-width: 600px) {
+        font-size: 28px;
+      }
     }
 
     .view-all {
@@ -18,8 +30,17 @@
       font-weight: 500;
       font-size: 20px;
       line-height: 24px;
+      margin-bottom: 4px;
       border-bottom: 1px solid black;
       transition: all 0.3s;
+
+      @media (max-width: 1400px) {
+        font-size: 18px;
+      }
+
+      @media (max-width: 600px) {
+        font-size: 16px;
+      }
 
       &:hover {
         color: rgb(70, 68, 68);
@@ -34,6 +55,11 @@
     justify-content: space-between;
     padding: 5px 54px;
     align-items: center;
+    flex-wrap: wrap;
+
+    @media (max-width: 1400px) {
+      padding: 5px 34px;
+    }
 
     .buttons-group {
       display: flex;
@@ -53,6 +79,11 @@
         text-align: center;
         flex-wrap: nowrap;
 
+        @media (max-width: 900px) {
+          padding: 6px 10px;
+          font-size: 16px;
+        }
+
         &:hover {
           color: rgba(0, 0, 0, 0.8);
           border-color: rgba(0, 0, 0, 0.8);
@@ -68,8 +99,13 @@
     .sort-coner {
       display: flex;
       gap: 15px;
-      height: 90px;
+      max-height: 90px;
       align-items: center;
+      padding: 15px 0px;
+
+      @media (max-width: 900px) {
+        gap: 5px;
+      }
 
       span {
         font-weight: 300;
@@ -77,6 +113,11 @@
         line-height: 24px;
         color: #000;
         width: 68px;
+
+        @media (max-width: 900px) {
+          font-size: 16px;
+          line-height: 20px;
+        }
       }
 
       .select-wrapper {
@@ -98,6 +139,12 @@
         transition: all 0.3s;
         z-index: 10;
 
+        @media (max-width: 900px) {
+          font-size: 14px;
+          height: 38px;
+          width: 138px;
+        }
+
         &:hover {
           border: 1px solid rgba(128, 128, 128, 0.623);
         }
@@ -105,6 +152,10 @@
         .selected-item {
           font-size: 16px;
           width: 75%;
+
+          @media (max-width: 900px) {
+            font-size: 14px;
+          }
         }
 
         ul {
@@ -166,18 +217,17 @@
 
 .goods-wrapper {
   background-color: rgba(217, 217, 217, 0.5);
- padding: 10px 0px 20px 30px;  
-  gap:  20px;
-  
+  padding: 10px 0px 20px 30px;
+  gap: 20px;
+
   @media (max-width: 900px) {
-    padding: 10px 0px 20px 20px;  
+    padding: 10px 0px 20px 20px;
     gap: 10px;
   }
 
   .swiper {
     padding-top: 70px;
     padding-bottom: 35px;
-
 
     div.swiper-scrollbar:hover {
       cursor: grab;

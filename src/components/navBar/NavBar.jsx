@@ -30,12 +30,11 @@ function Navbar() {
                         <img src={searchImg} height='24px' alt='search-img' />
                     </div>
                 </li>
-                <li><img className='bell' src={bell} height='32px' alt='search-img' /></li>
+                <li><img className='bell' src={bell} alt='search-img' /></li>
                 <li><span className='vertical-line'></span></li>
-                <li><img className='shopping-bag' src={shoppingBag} height='32px' alt='search-img' /></li>
+                <li><img className='shopping-bag' src={shoppingBag} alt='search-img' /></li>
                 <li><span className='vertical-line'></span></li>
-                <li><img className='log-in' src={logIn} height='32px' alt='search-img' /></li>
-            
+                <li><img className='log-in' src={logIn} alt='search-img' /></li>            
             </ul>
         </nav>
     )

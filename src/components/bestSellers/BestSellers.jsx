@@ -72,7 +72,6 @@ const BestSellers = () => {
                             <li onClick={() => handleSelectChange('Popularity')}>Popularity</li>
                         </ul>
                     </div>
-
                 </div>
             </nav>
             <div className="goods-wrapper">
