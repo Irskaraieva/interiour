@@ -5,7 +5,7 @@
   position: relative;
 
   @media (max-width: 1400px) {
-    padding: 10px 30px 20px 30px;
+    padding: 10px 30px 10px 30px;
   }
 
   .image-wrapper {
@@ -75,7 +75,7 @@
       p {
         position: absolute;
         overflow-y: hidden;
-        top: 41%;
+        top: 43%;
         font-size: 16px;
         color: #fff;
         z-index: 5;

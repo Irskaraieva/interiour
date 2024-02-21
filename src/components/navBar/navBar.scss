@@ -7,9 +7,59 @@
   height: max-content;
   font-family: var(--font-family-abel);
 
+  .logo-mobile-container {
+    border-radius: 11px;
+    display: flex;
+    background-color: #1e1e1e;
+    align-items: center;    
+    padding: 15px;
+
+    .logo {
+      width: fit-content;
+      padding: 0px;
+    }
+
+    .logo-text {
+      font-size: calc(30px + (40 - 30) * ((100vw - 320px) / 1400));
+      line-height: inherit;
+      color: #fff;
+      z-index: 5;
+    }
+
+    .logo-img {
+      position: absolute;
+      width: calc(40px + (55 - 40) * ((100vw - 320px) / 1400));
+      top: 0;
+      right: -3px;
+    }
+
+    .input-box {      
+      height: 40px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 1000px) {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      flex-wrap: wrap;
+   
+      .input-box {      
+        width: 100%;
+        margin: 15px 0px 0px;
+      }
+     }
+  }
+
   @media (max-width: 1400px) {
     padding: 20px 15px;
-  } 
+  }
+
+  @media (max-width: 1000px) {
+    padding: 10px 15px;
+    margin: 0;
+  }
 
   .nav-list {
     display: flex;
@@ -21,6 +71,14 @@
     @media (max-width: 1400px) {
       gap: inherit;
     }
+
+    @media (max-width: 1000px) {
+      padding-top: 20px;
+
+      .input-desktop {
+        display: none;
+      }
+    }
   }
 
   .button-home {
@@ -29,17 +87,17 @@
     border-radius: 11px;
     padding: 5px 30px;
     font-family: var(--font-family-abel);
-    font-size:  calc(18px + (32 - 18) * ((100vw - 360px) / 1400));
+    font-size: calc(18px + (32 - 18) * ((100vw - 360px) / 1400));
     color: #000;
-    transition: all .3s;
+    transition: all 0.3s;
 
     @media (max-width: 1400px) {
       padding: 5px 20px;
-      font-size:  calc(16px + (28 - 16) * ((100vw - 360px) / 1400));
+      font-size: calc(16px + (28 - 16) * ((100vw - 360px) / 1400));
     }
 
     &:hover {
-      background:  #1E1E1E;     
+      background: #1e1e1e;
       color: #f6f6f6;
     }
   }
@@ -49,61 +107,46 @@
     width: 2px;
     height: 36px;
     background-color: rgba(0, 0, 0, 0.25);
+
+    @media (max-width: 1000px) {
+      height: 26px;
+      margin: 0 2px;
+    }
   }
 
   .new-items {
     display: block;
-    font-size:  calc(18px + (32 - 18) * ((100vw - 360px) / 1400));
+    font-size: calc(18px + (32 - 18) * ((100vw - 360px) / 1400));
     width: calc(100px + (156 - 120) * ((100vw - 320px) / 1400));
     color: rgba(0, 0, 0, 0.9);
     padding: 5px;
-    transition: all .3s;
+    transition: all 0.3s;
 
     @media (max-width: 1400px) {
-      font-size:  calc(16px + (28 - 16) * ((100vw - 360px) / 1400));
+      font-size: calc(16px + (28 - 16) * ((100vw - 360px) / 1400));
     }
 
+    @media (max-width: 600px) {
+      width: calc(80px + (126 - 80) * ((100vw - 320px) / 1400));;
+    }
+    
     &:hover {
       cursor: pointer;
       color: rgba(0, 0, 0, 0.7);
     }
   }
 
-  .input-box {
-    position: relative;
-    border: 0px solid rgba(0, 0, 0, 0.8);
-    border-radius: 11px;
-    height: 60px;
-
-    @media (max-width: 1400px) {
-      height: 52px;
-    }
-
-    img {
-      position: absolute;
-      left: 5px;
-      top: 32%;
-    }
-  }
-
-  .input {
-    width: 100%;
-    height: 100%;
-    border-radius: 11px;
-    padding-left: 45px;
-    font-family: var(--font-family);
-  }
-
   .bell,
   .shopping-bag,
   .log-in {
-    transition: all .3s;
-    filter: invert(0%) sepia(94%) saturate(100%) hue-rotate(274deg) brightness(0%) contrast(90%);
+    transition: all 0.3s;
+    filter: invert(0%) sepia(94%) saturate(100%) hue-rotate(274deg)
+      brightness(0%) contrast(90%);
 
     &:hover {
       cursor: pointer;
-      filter: invert(0%) sepia(94%) saturate(7489%) hue-rotate(274deg) brightness(102%) contrast(40%);
-      
+      filter: invert(0%) sepia(94%) saturate(7489%) hue-rotate(274deg)
+        brightness(102%) contrast(40%);
     }
   }
 
@@ -116,5 +159,8 @@
       height: 25px;
     }
 
+    @media (max-width: 600px) {
+      height: 20px;
+    }
   }
 }
