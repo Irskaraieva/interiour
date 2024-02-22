@@ -7,10 +7,6 @@
   padding: 18px 18px;
   position: relative;
 
-  @media (max-width: 900px) {
-    max-height: 320px;
-  }
-
   .card-img {
     position: relative;
     position: absolute;
@@ -33,10 +29,8 @@
   &:hover {
     cursor: pointer;
 
-    .prod-img {
-    
-      top: -1%;
- 
+    .prod-img {    
+      top: -1%; 
     }
   }
 
@@ -51,7 +45,7 @@
     justify-content: space-between;
     
     @media (max-width: 900px) {
-      height: 120px;
+      // height: 120px;
     }
   }
 
@@ -80,9 +74,9 @@
     align-items: center;
     gap: 12px;
 
-    @media (max-width: 900px) {
-      margin-top: 2px;
-    }
+    // @media (max-width: 900px) {
+    //   margin-top: 2px;
+    // }
     
     .price {
       border: 1px solid rgba(0, 0, 0, 0.2);

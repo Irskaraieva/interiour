@@ -1,12 +1,13 @@
 .offers {
-  padding: 20px 20px 0px 30px;
-  margin-left: 24px;
-  margin-right: 24px;
+  padding: 20px 44px 15px 54px;
+  background-color: #fff;
 
   @media (max-width: 1400px) {
-    padding: 10px 0px 0px;
-    margin-left: 24px;
-    margin-right: 24px;
+    padding: 20px 30px 15px;
+  }
+
+  @media (max-width: 1000px) {
+    padding: 20px 20px 10px;
   }
 
   .offers-header {

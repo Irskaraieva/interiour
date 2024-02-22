@@ -17,15 +17,15 @@
     position: relative; 
     font-family: 'Inter';
     font-weight: 500;
-    font-size: calc(40px + (80 - 40) * ((100vw - 320px) / 1400));
-    line-height: calc(80px + (140 - 80) * ((100vw - 320px) / 1400));
+    font-size: calc(40px + (70 - 40) * ((100vw - 320px) / 1400));
+    line-height: calc(60px + (120 - 60) * ((100vw - 320px) / 1400));
     color: #fff;
     z-index: 5;
 }
 
 .logo-img {
     position: absolute;
-    width: calc(50px + (110 - 50) * ((100vw - 320px) / 1400));
-    top: 16%;
+    width: calc(40px + (110 - 45) * ((100vw - 320px) / 1400));
+    top: 12%;
     right: -6px;
 }

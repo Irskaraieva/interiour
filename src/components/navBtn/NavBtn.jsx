@@ -1,19 +1,30 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import '../navBtn/navBtn.scss';
 import Filters from "../filters/Filters";
 
 function NavBtn() {
     const [isActive, setIsActive] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     const toggleActive = () => {
         setIsActive(!isActive);
     };
 
-    const btnClass = isActive ? 'nav-mob-btn active' : 'nav-mob-btn';
-
-    const navClass = isActive ? 'mob-nav mob-nav-active' : 'mob-nav';
-    const mobWrapperClass = isActive ? 'mob-nav-wrapper mob-nav-wrapper-open' : 'mob-nav-wrapper';
+    const btnClass = isActive && windowWidth <= 1000 ? 'nav-mob-btn active' : 'nav-mob-btn';
+    const navClass = isActive && windowWidth <= 1000 ? 'mob-nav mob-nav-active' : 'mob-nav';
+    const mobWrapperClass = isActive && windowWidth <= 1000 ? 'mob-nav-wrapper mob-nav-wrapper-open' : 'mob-nav-wrapper';
 
     return (
         <>
