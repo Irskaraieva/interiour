@@ -1,8 +1,7 @@
 .aside {
   width: 30%; 
   background-color: rgba(30, 30, 30, 0.8);
-  // padding-bottom: 50px;
-  
+
   @media (max-width: 1000px) {
     display: none;
   }
