@@ -19,7 +19,7 @@ const BestSellers = () => {
     const [hasGoods, setHasGoods] = useState(goods);
     const [selectedSort, setSelectedSort] = useState('Low-hight');
     const [visibleList, setVisibleList] = useState(false);
-    const [activeButton, setActiveButton] = useState(null);
+    const [activeButton, setActiveButton] = useState(0);
 
     const handleSelectChange = (e) => {
         setSelectedSort(e);
@@ -35,6 +35,7 @@ const BestSellers = () => {
 
     const buttons = ["All Products", "Chair", "Table", "Sofa", "FootStool", "Office"];
     const listClass = visibleList ? "select is-visible" : "select";
+    const arrowClass = visibleList ? "sort-arrow rotate" : "sort-arrow";
 
     return (
         <section className="best-sellers-wrapper">
@@ -62,7 +63,7 @@ const BestSellers = () => {
                     <span>Sort by</span>
                     <div className="select-wrapper" onClick={handleVisibleList}>
                         <span className="selected-item">{selectedSort}</span>
-                        <span className='sort-arrow'>
+                        <span className={arrowClass}>
                             <img src={arrow} alt='arrow' />
                         </span>
                         <ul className={listClass}>
@@ -105,11 +106,12 @@ const BestSellers = () => {
                 >
                     {hasGoods.length > 0 ? (
                         hasGoods.map((good) => {
-                            const {id, brand, name, price, image } = good;
+                            const {id, brand, name, price, image, type } = good;
                             const props = {
                                 brand,
                                 name,
                                 price,
+                                type,
                                 img: image || imageDefault,
                             }
 

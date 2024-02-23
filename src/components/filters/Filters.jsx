@@ -65,7 +65,8 @@ const Filters = () => {
             </div>
             <span className='reset-filter' onClick={handleResetFilters}>
                 Reset Filter
-            </span>
+            </span>            
+            <button className='apply'>Apply</button>    
         </header>
         <div className='filter-wraper'>
             <div className='is-flex' onClick={handleOpenStore}>
@@ -127,13 +128,12 @@ const Filters = () => {
             <span className='max-price'>
                 $2k
             </span>
-            <div style={{ position: 'absolute', bottom: '40px', left: `${value[0]/ 23}%`, color: 'white' }}>
+            <div style={{ position: 'absolute', bottom: '-35px', left: `${value[0]/ 23}%`, color: 'white' }}>
                 ${value[0]}
             </div>
-            <div style={{ position: 'absolute', bottom: '40px', left: `${value[1]/ 23}%`, color: 'white' }}>
+            <div style={{ position: 'absolute', bottom: '-35px', left: `${value[1]/ 23}%`, color: 'white' }}>
                 ${value[1]}
-            </div>
-       
+            </div>       
         </div>
     </section>
      );

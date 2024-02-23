@@ -50,13 +50,15 @@
       background: #fff;
     }
   }
+
+
 }
 
 .filter {
   display: flex;
   align-items: center;
-  gap: calc(8px + (14 - 8) * ((100vw - 320px) / 1400));
-  font-size: calc(16px + (24 - 16) * ((100vw - 320px) / 1400));
+  gap: calc(8px + (10 - 8) * ((100vw - 320px) / 1400));
+  font-size: calc(16px + (20 - 16) * ((100vw - 320px) / 1400));
   color: #fff;
   font-weight: bold;
 
@@ -73,9 +75,12 @@
   display: flex;
   align-items: last baseline;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.reset-filter {
+.reset-filter,
+.apply {
   color: #fff;
   font-size: calc(13px + (17 - 13) * ((100vw - 320px) / 1400));
   font-weight: bold;
@@ -121,7 +126,6 @@
   display: flex;
   flex-direction: column;
   gap: 80px;
-  padding-bottom: 80px;
   position: relative;
   font-size: calc(16px + (20 - 16) * ((100vw - 320px) / 1400));
   color: #fff;
