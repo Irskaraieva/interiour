@@ -13,8 +13,7 @@ export default function Layout() {
             <Aside />            
             <MainPage />
             <Outlet /> 
-            </div>
-            
+            </div>            
         </div>
         
         </>

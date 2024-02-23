@@ -80,7 +80,7 @@ button.nav-mob-btn {
   left: 0;
   top: 0;
   width: 100%; 
-  background: rgba(147, 148, 148, 0.9);
+  background: rgba(147, 148, 148, .97);
   pointer-events: none;
   transition: all 0.4s ease-in;
   min-height:calc(100vh) ;
@@ -100,7 +100,7 @@ button.nav-mob-btn {
   right: 0; 
   width: 440px;
   padding: 60px 30px;
-  background-color: rgba(30, 30, 30);
+  background-color: rgba(30, 30, 30, .7);
   align-items: center;
   pointer-events: all;
   overflow: hidden;
@@ -109,7 +109,7 @@ button.nav-mob-btn {
   transform: translate(100%, 0);
   transition: transform 0.3s ease-in;
 
-  @media (max-width: 600px) {
+  @media (max-width: 460px) {
     width: 100%;
   }
 }

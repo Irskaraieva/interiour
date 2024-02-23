@@ -12,6 +12,10 @@
     padding: 25px 20px;
   }
 
+  @media (max-width: 1000px) {
+    gap: 20px;
+  }
+
   @media (max-width: 600px) {
     padding: 15px 0px;
   }
@@ -102,7 +106,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 
   @media (max-width: 1000px) {
-    padding-bottom: 30px;
+    padding-bottom: 20px;
   }
 
   span {
@@ -171,6 +175,7 @@
 
   @media (max-width: 1000px) {
     max-height: 230px;
+    gap: 15px;
   }
 
   span {

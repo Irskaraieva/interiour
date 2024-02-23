@@ -16,10 +16,20 @@ function NavBtn() {
         return () => {
             window.removeEventListener("resize", handleResize);
         };
+
     }, []);
+
+    useEffect(() => {
+        if (windowWidth >= 1000 && isActive) {
+            document.body.classList.remove("no-scroll");
+            setIsActive(false);
+        } 
+        
+    }, [windowWidth, isActive]);
 
     const toggleActive = () => {
         setIsActive(!isActive);
+        document.body.classList.toggle("no-scroll");
     };
 
     const btnClass = isActive && windowWidth <= 1000 ? 'nav-mob-btn active' : 'nav-mob-btn';
