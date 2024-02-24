@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -15,22 +15,44 @@ import imageDefault from './../../images/products/all-products/imageNotFound.png
 SwiperCore.use([Navigation]);
 
 const BestSellers = () => {
-
+    const [ selectedCategory, setSelectedCategory ] = useState('All Products');
     const [hasGoods, setHasGoods] = useState(goods);
     const [selectedSort, setSelectedSort] = useState('Low-hight');
     const [visibleList, setVisibleList] = useState(false);
     const [activeButton, setActiveButton] = useState(0);
 
-    const handleSelectChange = (e) => {
-        setSelectedSort(e);
+    useEffect(() => {
+        if (selectedCategory === 'All Products') {
+            setHasGoods(goods);
+        } else {
+            setHasGoods(goods.filter(item => 
+                item.type.toLocaleLowerCase() === selectedCategory.toLocaleLowerCase()));
+        }
+    }, [selectedCategory]);
+
+    const handleSelectChange = (sortType) => {
+        setSelectedSort(sortType);
+        
+        const sortedGoods = [...hasGoods];
+
+        if (sortType === 'Low-hight') {
+            sortedGoods.sort((a, b) => a.price -b.price);
+        } else if (sortType === 'Hight-low') {
+            sortedGoods.sort((a, b) => b.price - a.price);
+        } else if (sortType === 'Name') {
+            sortedGoods.sort((a, b) => a.name.localeCompare(b.name));
+        }
+    
+        setHasGoods(sortedGoods);
     }
 
     const handleVisibleList = () => {
         setVisibleList(!visibleList);
     }
 
-    const handleButtonActive = (index) => {
+    const handleButtonActive = (index, category) => {
         setActiveButton(index);
+        setSelectedCategory(category);
     }
 
     const buttons = ["All Products", "Chair", "Table", "Sofa", "FootStool", "Office"];
@@ -52,7 +74,7 @@ const BestSellers = () => {
                             key={index}
                             className={activeButton === index ? "active" : ""}
                             onClick={() => {
-                                handleButtonActive(index);
+                                handleButtonActive(index, button);
                             }}
                         >
                             {button}
@@ -80,25 +102,12 @@ const BestSellers = () => {
                     slidesPerView={2.5}
                     spaceBetween={20}
                     breakpoints={{
-                        200: {
-                            slidesPerView: 1
-                        },
-                        360: {
-                            slidesPerView: 1.4
-                        },
-                        500: {
-                            slidesPerView: 2
-                        },
-                        800: {
-                            slidesPerView: 2.5
-                        },              
-              
-                        1300: {
-                            slidesPerView: 3
-                        },
-                        1700: {
-                            slidesPerView: 3.5
-                        }
+                        200: { slidesPerView: 1},
+                        360: { slidesPerView: 1.4 },
+                        500: { slidesPerView: 2 },
+                        800: { slidesPerView: 2.5 }, 
+                        1300: { slidesPerView: 3 },
+                        1700: { slidesPerView: 3.5 }
                     }}
                     modules={[Navigation, Scrollbar]}
                     className="mySwiper"
@@ -114,7 +123,6 @@ const BestSellers = () => {
                                 type,
                                 img: image || imageDefault,
                             }
-
                             return <SwiperSlide key={id}>
                                 <Card {...props} />
                             </SwiperSlide>
