@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { NavLink, useLocation } from "react-router-dom";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
@@ -8,31 +9,42 @@ import SwiperCore from 'swiper';
 import '../bestSellers/bestSellers.scss';
 import arrow from './../../images/photo-content/arrow.png';
 import Card from "./Card/Card";
-import { goods } from "../../helpers/Goods";
-
-import imageDefault from './../../images/products/all-products/imageNotFound.png';
+import { useGoods } from "../../context/GodsContext";
+import imageDefault from './../../images/products/all-products/default-img.png';
 
 SwiperCore.use([Navigation]);
 
 const BestSellers = () => {
-    const [ selectedCategory, setSelectedCategory ] = useState('All Products');
-    const [hasGoods, setHasGoods] = useState(goods);
+    
+    const { selectedCategory, setSelectedCategory, hasGoods, setHasGoods, goods, checkedItems } = useGoods();
     const [selectedSort, setSelectedSort] = useState('Low-hight');
     const [visibleList, setVisibleList] = useState(false);
     const [activeButton, setActiveButton] = useState(0);
 
     useEffect(() => {
         if (selectedCategory === 'All Products') {
+            
+           if (checkedItems.length > 0) {
+            setHasGoods(goods.filter((item) =>
+            checkedItems.includes(item.brand)))
+           } else {
             setHasGoods(goods);
-        } else {
-            setHasGoods(goods.filter(item => 
+           }        
+        } else {            
+            if (checkedItems.length > 0) {
+                setHasGoods(goods
+                    .filter(item => item.type.toLocaleLowerCase() === selectedCategory.toLocaleLowerCase())
+                    .filter(item => checkedItems.includes(item.brand)));
+            } else {
+                 setHasGoods(goods.filter(item => 
                 item.type.toLocaleLowerCase() === selectedCategory.toLocaleLowerCase()));
+            }           
         }
-    }, [selectedCategory]);
+    }, [selectedCategory, checkedItems]);
 
     const handleSelectChange = (sortType) => {
         setSelectedSort(sortType);
-        
+
         const sortedGoods = [...hasGoods];
 
         if (sortType === 'Low-hight') {
@@ -63,9 +75,12 @@ const BestSellers = () => {
         <section className="best-sellers-wrapper">
             <header className="best-sellers-header">
                 <h2>Best Sellers</h2>
-                <span className="view-all">
-                    View All
-                </span>
+                <NavLink to={'/products'}>
+                    <span className="view-all">
+                        View All
+                    </span>
+                </NavLink>
+
             </header>
             <nav className="best-sellers-nav">
                 <div className="buttons-group">
@@ -115,13 +130,14 @@ const BestSellers = () => {
                 >
                     {hasGoods.length > 0 ? (
                         hasGoods.map((good) => {
-                            const {id, brand, name, price, image, type } = good;
+                            const {id, brand, name, price, image, type,category } = good;
                             const props = {
                                 brand,
                                 name,
                                 price,
                                 type,
                                 img: image || imageDefault,
+                                category,
                             }
                             return <SwiperSlide key={id}>
                                 <Card {...props} />

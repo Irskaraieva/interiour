@@ -1,10 +1,9 @@
 import '../navBar/navBar.scss';
-
+import { NavLink } from "react-router-dom";
 import bell from './../../images/photo-content/bell.svg';
 import shoppingBag from './../../images/photo-content/shopping-bag.svg';
 import logIn from './../../images/photo-content/log-in.svg';
 import Logo from '../logo/Logo';
-import NavBtn from '../navBtn/NavBtn';
 import InputSearch from '../inputSearch/InputSearch';
 
 function Navbar() {
@@ -12,13 +11,16 @@ function Navbar() {
     return (
         <div className='nav-wrapper'>
            <nav className="nav" id="nav">
-            {/* <NavBtn /> */}
             <div className='logo-mobile-container'>
                 <Logo />   
                 <InputSearch />             
             </div>
-            <ul className="nav-list">                
-                <li><button className='button-home'> Home</button></li>
+            <ul className="nav-list">
+                <li>
+                    <NavLink to={'/'}>
+                         <button className='button-home'> Home</button>
+                    </NavLink>
+                </li>
                 <li><span className='vertical-line'></span></li>
                 <li><span className='new-items'> New Items</span></li>
                 <li className='input-desktop'>
