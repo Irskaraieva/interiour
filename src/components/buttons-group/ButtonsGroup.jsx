@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import '../buttons-group/buttonsGroup.scss';
 import { useGoods } from '../../context/GodsContext';
+import arrow from './../../images/photo-content/arrow.png';
 
 const ButtonsGroup = () => {
 
@@ -7,6 +9,27 @@ const ButtonsGroup = () => {
     const [selectedSort, setSelectedSort] = useState('Low-hight');
     const [visibleList, setVisibleList] = useState(false);
     const [activeButton, setActiveButton] = useState(0);
+
+    useEffect(() => {
+        if (selectedCategory === 'All Products') {
+            
+           if (checkedItems.length > 0) {
+            setHasGoods(goods.filter((item) =>
+            checkedItems.includes(item.brand)))
+           } else {
+            setHasGoods(goods);
+           }        
+        } else {            
+            if (checkedItems.length > 0) {
+                setHasGoods(goods
+                    .filter(item => item.type.toLocaleLowerCase() === selectedCategory.toLocaleLowerCase())
+                    .filter(item => checkedItems.includes(item.brand)));
+            } else {
+                 setHasGoods(goods.filter(item => 
+                item.type.toLocaleLowerCase() === selectedCategory.toLocaleLowerCase()));
+            }           
+        }
+    }, [selectedCategory, checkedItems]);
 
     const handleSelectChange = (sortType) => {
         setSelectedSort(sortType);

@@ -29,11 +29,8 @@ const OffersSwiper = () => {
                     200: {
                         slidesPerView: 1
                     },
-                    360: {
-                        slidesPerView: 1
-                    },
                     500: {
-                        slidesPerView: 1.2
+                        slidesPerView: 1.5
                     },                                          
                     700: {
                         slidesPerView: 2

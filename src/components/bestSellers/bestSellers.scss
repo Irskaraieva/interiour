@@ -200,11 +200,11 @@
           transform: translateY(0px);
           opacity: 1;
         }
-        
+
         .rotate {
           transform: rotate(180deg);
         }
-        
+
         .sort-arrow {
           background-color: #000;
           display: flex;
@@ -214,7 +214,7 @@
           background-color: black;
           border-radius: 50%;
           transition: all 0.3s;
-          
+
           img {
             height: 4px;
             width: 8px;
@@ -222,7 +222,6 @@
             stroke: #fff;
             transform: rotate(180deg);
           }
-
         }
       }
     }
@@ -230,7 +229,6 @@
 }
 
 .goods-wrapper {
-  // background-color: rgba(217, 217, 217, 0.5);
   padding: 10px 0px 20px 30px;
   gap: 20px;
 
@@ -242,6 +240,10 @@
   .swiper {
     padding-top: 70px;
     padding-bottom: 35px;
+    
+    @media (max-width: 1000px) {
+      padding-top: 40px;
+    }
 
     div.swiper-scrollbar:hover {
       cursor: grab;
