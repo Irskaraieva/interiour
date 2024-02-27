@@ -7,11 +7,12 @@ import { useState, useEffect } from 'react';
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
+    signInWithPopup,
     signOut,
     onAuthStateChanged,
     sendPasswordResetEmail
 } from 'firebase/auth';
-import { auth } from '../../firebase';
+import { auth, googleProvider } from '../../firebase';
 import '../SignIn/signIn.scss';
 
 const SignIn = () => {
@@ -83,7 +84,7 @@ const SignIn = () => {
 
     const handleSignIn = async ({ email, password }) => {
         try {
-            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const userCredential = await signInWithEmailAndPassword(auth, googleProvider);
             const user = userCredential.user;
             setServerError('');
             reset();
@@ -97,6 +98,16 @@ const SignIn = () => {
                 setServerError('An unexpected error occurred. Please try again.');
                 console.error(errorCode, errorMessage);
             }
+        }
+    };
+
+    const signInWithGoogle = async () => {
+        try {
+            const userCredential = await signInWithPopup(auth, googleProvider);
+            const user = userCredential.user;            
+            reset();
+        } catch (error) {
+            console.log(error);
         }
     };
 
@@ -195,8 +206,14 @@ const SignIn = () => {
                                         }
                                     </span>
                                 </button>
-                            </form>
 
+
+                            </form>
+                                <button
+                                className="google-btn"
+                                onClick={signInWithGoogle}>
+                                    Sign in with Google
+                                </button>
                         </div>
                         <p
                             onClick={handleResetPassword}
@@ -207,29 +224,12 @@ const SignIn = () => {
 
                 ) : (
                     <>
-                        <span className="icon is-medium mr-1 has-text-success-dark">
-                            <span className="mdi mdi-account-check mdi-24px"></span>
-                        </span>
                         <h5 className="title is-5">
                             You have successfully registered!
                         </h5>
-                        <div className="block">
-                            Go to
-                            <div className="buttons-group">
-                                <Link to={'/catFact'} className="button my-1 btn-generate">
-                                    Amazing cat's fakts
-                                    <span className="mdi mdi-arrow-right-bold-outline ml-3"></span>
-                                </Link>
-                                or
-                                <Link to={'/excuses'} className="button my-1 btn-generate">
-                                    Funny excuses
-                                    <span className="mdi mdi-arrow-right-bold-outline ml-3"></span>
-                                </Link>
-                            </div>
-                        </div>
-
-                        <Link to={'/'} className="login-link" onClick={handleSignOut}>
-                            Sign out <span className="mdi mdi-logout"></span>
+                        
+                        <Link to={'/'} className="sign-out" onClick={handleSignOut}>
+                            Sign out
                         </Link>
                     </>
                 )
