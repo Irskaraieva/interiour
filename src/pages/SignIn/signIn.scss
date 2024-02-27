@@ -91,17 +91,25 @@
 
  .google-btn {
         line-height: 32px;
-        margin: 8px auto;
-        width: 180px;
-        border-radius: 11px;
-        
+        margin: 12px auto;
+        width: 200px;
+        border-radius: 11px;        
         color: white;
         background-color: var(--color);
-        padding: 4px 18px;
+        padding: 4px;
         transition: all .3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
         
         &:hover {
             background-color: black;
+        }
+
+        .google-icon {
+            font-size: 1.4em;
+            
         }
     }
 

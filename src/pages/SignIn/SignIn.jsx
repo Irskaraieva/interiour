@@ -14,6 +14,7 @@ import {
 } from 'firebase/auth';
 import { auth, googleProvider } from '../../firebase';
 import '../SignIn/signIn.scss';
+import { FcGoogle } from "react-icons/fc";
 
 const SignIn = () => {
 
@@ -212,7 +213,8 @@ const SignIn = () => {
                                 <button
                                 className="google-btn"
                                 onClick={signInWithGoogle}>
-                                    Sign in with Google
+                                    <span>Sign in with Google</span>
+                                    <FcGoogle className="google-icon"/>
                                 </button>
                         </div>
                         <p
