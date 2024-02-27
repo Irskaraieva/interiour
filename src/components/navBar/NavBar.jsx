@@ -30,7 +30,11 @@ function Navbar() {
                 <li><span className='vertical-line'></span></li>
                 <li><img className='shopping-bag' src={shoppingBag} alt='search-img' /></li>
                 <li><span className='vertical-line'></span></li>
-                <li><img className='log-in' src={logIn} alt='search-img' /></li>            
+                <li>
+                    <NavLink to={'/sign-in'}>
+                       <img className='log-in' src={logIn} alt='search-img' /> 
+                    </NavLink>                    
+                </li>            
             </ul>
         </nav> 
         </div>
