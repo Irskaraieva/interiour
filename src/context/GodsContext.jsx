@@ -9,7 +9,15 @@ export const GoodsProvider = ({ children }) => {
   const [checkedItems, setCheckedItems] = useState([]);
 
   return (
-    <GoodsContext.Provider value={{ selectedCategory, setSelectedCategory, hasGoods, setHasGoods, goods, checkedItems, setCheckedItems }}>
+    <GoodsContext.Provider value={{
+      selectedCategory,
+      setSelectedCategory,
+      hasGoods,
+      setHasGoods,
+      goods,
+      checkedItems,
+      setCheckedItems
+      }}>
       {children}
     </GoodsContext.Provider>
   );

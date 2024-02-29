@@ -58,9 +58,13 @@ const BestSellers = () => {
                                 img: image || imageDefault,
                                 category,
                             }
-                            return <SwiperSlide key={id}>
-                                <Card {...props} />
-                            </SwiperSlide>
+                            return(
+                                <SwiperSlide key={id}>
+                                  <NavLink to={`/products/${id}`}>
+                                    <Card {...props} />
+                                  </NavLink>
+                                </SwiperSlide>
+                              );
                         })
                     ) : (
                         <div className="text-info">No items</div>

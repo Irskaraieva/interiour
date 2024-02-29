@@ -4,6 +4,7 @@ import '../layout/layout.scss';
 import Aside from "../aside/Aside";
 import NavBtn from "../navBtn/NavBtn";
 import Navbar from "../navBar/NavBar";
+import SingleItemProd from "../singleItemProd/SingleItemProd";
 
 export default function Layout() {
 
@@ -14,9 +15,10 @@ export default function Layout() {
                     <GoodsProvider>
                         <NavBtn />
                         <Aside />
-                        <main className="main">
+                        <main className="main">                            
                             <Navbar />                        
                             <Outlet />
+                            {/* <SingleItemProd /> */}
                         </main>
                     </GoodsProvider>
                 </div>

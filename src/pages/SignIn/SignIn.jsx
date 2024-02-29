@@ -105,7 +105,7 @@ const SignIn = () => {
     const signInWithGoogle = async () => {
         try {
             const userCredential = await signInWithPopup(auth, googleProvider);
-            const user = userCredential.user;            
+            const user = userCredential.user;
             reset();
         } catch (error) {
             console.log(error);
@@ -149,7 +149,7 @@ const SignIn = () => {
                                     onClick={() => setIsSignUpActive(false)}>
                                     Log in
                                 </a>
-                            </h6>                            
+                            </h6>
                         </header>
 
                         <div className="form-wrapper">
@@ -207,15 +207,13 @@ const SignIn = () => {
                                         }
                                     </span>
                                 </button>
-
-
                             </form>
-                                <button
+                            <button
                                 className="google-btn"
                                 onClick={signInWithGoogle}>
-                                    <span>Sign in with Google</span>
-                                    <FcGoogle className="google-icon"/>
-                                </button>
+                                <span>Sign in with Google</span>
+                                <FcGoogle className="google-icon" />
+                            </button>
                         </div>
                         <p
                             onClick={handleResetPassword}
@@ -226,10 +224,14 @@ const SignIn = () => {
 
                 ) : (
                     <>
-                        <h5 className="title is-5">
+                        <h5 className="">
                             You have successfully registered!
                         </h5>
-                        
+
+                        <Link to={'/'} className="home-page">
+                            Home Page
+                        </Link>
+
                         <Link to={'/'} className="sign-out" onClick={handleSignOut}>
                             Sign out
                         </Link>

@@ -4,6 +4,7 @@ import './styles/main.scss';
 import HomePage from "./pages/homePage/HomePage";
 import ProductsList from "./pages/productsList/ProductsList";
 import SignIn from "./pages/SignIn/SignIn";
+import SingleItemProd from "./components/singleItemProd/SingleItemProd";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="/products" element={<ProductsList />} />
           <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/products/:id" element={<SingleItemProd />} />
         </Route>
       </Routes>
     </Router>

@@ -1,6 +1,14 @@
 .aside {
-  width: 27%; 
+  min-width: 460px;
   background-color: rgba(30, 30, 30, 0.8);
+
+  @media (max-width: 1700px) {
+    min-width: 400px;
+  }
+
+  @media (max-width: 1400px) {
+    min-width: 340px;
+  }
 
   @media (max-width: 1000px) {
     display: none;
