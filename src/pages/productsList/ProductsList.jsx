@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import '../productsList/productsList.scss';
 import { useGoods } from '../../context/GodsContext';
 import Card from '../../components/bestSellers/Card/Card';
@@ -24,7 +25,9 @@ const ProductsList = () => {
                                 category,
                             }
                             return (
-                                <Card key={id} {...props} />
+                                <NavLink to={`/products/${id}`}>
+                                    <Card key={id} {...props} />
+                                </NavLink>
                             )
                         })
                     ) : (

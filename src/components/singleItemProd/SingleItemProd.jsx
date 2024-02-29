@@ -2,14 +2,13 @@ import { useParams } from "react-router-dom";
 import '../singleItemProd/singleItemProd.scss';
 import shoppingBag from '../../images/photo-content/shopping-bag.svg';
 import { MdStar } from "react-icons/md";
-import { useGoods } from "../../context/GodsContext";
+import { goods } from "../../helpers/Goods";
 
 
 const SingleItemProd = () => {
 
-    const {id} = useParams();
-    const { hasGoods } = useGoods();
-    const selectedItem = hasGoods[id - 1];
+    const {id} = useParams();  
+    const selectedItem = goods[id - 1];
     const selectedImg = selectedItem.image;
     const selectedName = selectedItem.name;
     const selectedBrand = selectedItem.brand;
