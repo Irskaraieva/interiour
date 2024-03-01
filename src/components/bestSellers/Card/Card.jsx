@@ -1,11 +1,14 @@
+import { NavLink } from 'react-router-dom';
 import shoppingBag from '../../../images/photo-content/shopping-bag.svg';
 import { BiDotsHorizontalRounded } from "react-icons/bi";
-
+import { useContext } from 'react';
+import { CartContext } from '../../../context/CartContext';
 import { MdStar } from "react-icons/md";
-
 import '../Card/card.scss';
 
-const Card = ({ name, brand, price, img }) => {
+const Card = ({ id, name, brand, price, img }) => {
+
+    const { addToCart } = useContext(CartContext);
 
     return (
         <>
@@ -16,11 +19,12 @@ const Card = ({ name, brand, price, img }) => {
 
                 <div className='card-description'>
                     <span className="brand-name"> {brand} </span>
-                    <div className='good-name-wrapper'>
-                        <h3 className="good-name">{name}</h3>
-                        <BiDotsHorizontalRounded className='dots' />
-                    </div>
-
+                    <NavLink to={`/products/${id}`}>
+                        <div className='good-name-wrapper'>
+                            <h3 className="good-name">{name}</h3>
+                            <BiDotsHorizontalRounded className='dots' />
+                        </div>
+                    </NavLink>
                     <ul className="stars-wrapper">
                         <li>< MdStar className='star cheked' /></li>
                         <li>< MdStar className='star cheked' /></li>
@@ -30,7 +34,7 @@ const Card = ({ name, brand, price, img }) => {
                     </ul>
                     <div className="card-bottom">
                         <span className="price"> $ {price}</span>
-                        <div className='shopping-bag' >
+                        <div className='shopping-bag' onClick={() => addToCart()}>
                             <img src={shoppingBag} height='32px' alt='search-img' />
                         </div>
                     </div>

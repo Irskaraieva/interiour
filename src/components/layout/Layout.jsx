@@ -4,7 +4,7 @@ import '../layout/layout.scss';
 import Aside from "../aside/Aside";
 import NavBtn from "../navBtn/NavBtn";
 import Navbar from "../navBar/NavBar";
-import SingleItemProd from "../singleItemProd/SingleItemProd";
+import { CartContextProvider } from "../../context/CartContext";
 
 export default function Layout() {
 
@@ -12,15 +12,17 @@ export default function Layout() {
         <>
             <div className="content">
                 <div className="content-wrapper">
-                    <GoodsProvider>
-                        <NavBtn />
-                        <Aside />
-                        <main className="main">                            
-                            <Navbar />                        
-                            <Outlet />
-                            {/* <SingleItemProd /> */}
-                        </main>
-                    </GoodsProvider>
+                    <CartContextProvider>
+                        <GoodsProvider>
+                            <NavBtn />
+                            <Aside />
+                            <main className="main">
+                                <Navbar />
+                                <Outlet />
+                            </main>
+                        </GoodsProvider>
+                    </CartContextProvider>
+
                 </div>
             </div>
 

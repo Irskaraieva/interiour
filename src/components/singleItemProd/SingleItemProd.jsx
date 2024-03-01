@@ -4,10 +4,9 @@ import shoppingBag from '../../images/photo-content/shopping-bag.svg';
 import { MdStar } from "react-icons/md";
 import { goods } from "../../helpers/Goods";
 
-
 const SingleItemProd = () => {
 
-    const {id} = useParams();  
+    const { id } = useParams();
     const selectedItem = goods[id - 1];
     const selectedImg = selectedItem.image;
     const selectedName = selectedItem.name;
@@ -35,7 +34,10 @@ const SingleItemProd = () => {
                                 <li>< MdStar className='star cheked' /></li>
                             </ul>
                         </div>
-
+                        <div className="item-category">
+                            <p> Category: <span>{selectedCategory}</span> </p>
+                            <p> Type: <span>{selectedType}</span> </p>
+                        </div>
 
                         <div className='price-wrapper'>
                             <h3 className='price'>$ {selectedPrice}</h3>

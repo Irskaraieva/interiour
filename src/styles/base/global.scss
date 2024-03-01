@@ -2,7 +2,10 @@
   width: 100vw;
   min-height: 100vh;
   background-color: #a1a0a085;
- 
+  
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 body {

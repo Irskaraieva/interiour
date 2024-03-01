@@ -13,6 +13,7 @@ const goods = [
         image: prod1,
         type: 'chair',
         category: 'Furniture',
+        itemCount: 1,
     },
     {
         id: 2,
@@ -22,6 +23,7 @@ const goods = [
         image: prod2,
         type: 'table',
         category: 'Furniture',
+        itemCount: 1,
     },
     {
         id: 3,
@@ -31,6 +33,7 @@ const goods = [
         image: prod3,
         type: 'sofa',
         category: 'Furniture',
+        itemCount: 1,
     },
     {
         id: 4,
@@ -40,6 +43,7 @@ const goods = [
         image: prod4,
         type: 'footstool',
         category: 'Furniture',
+        itemCount: 1,
     },
     {
         id: 5,
@@ -49,6 +53,7 @@ const goods = [
         image: prod5,
         type: 'office',
         category: 'Furniture',
+        itemCount: 1,
     },
     {
         id: 6,
@@ -58,6 +63,7 @@ const goods = [
         image: prod1,
         type: 'chair',
         category: 'Furniture',
+        itemCount: 1,
     },
     {
         id: 7,
@@ -67,6 +73,7 @@ const goods = [
         image: prod2,
         type: 'chair',
         category: 'Plants',
+        itemCount: 1,
     },
     {
         id: 8,
@@ -76,6 +83,7 @@ const goods = [
         image: prod3,
         type: 'chair',
         category: 'Plants',
+        itemCount: 1,
     },
     {
         id: 9,
@@ -85,6 +93,7 @@ const goods = [
         image: prod4,
         type: 'chair',
         category: 'Plants',
+        itemCount: 1,
     },
     {
         id: 10,
@@ -94,6 +103,7 @@ const goods = [
         image: prod5,
         type: 'chair',
         category: 'Plants',
+        itemCount: 1,
     },
     {
         id: 11,
@@ -103,6 +113,7 @@ const goods = [
         image: prod1,
         type: 'chair',
         category: 'Plants',
+        itemCount: 1,
     },
     {
         id: 12,
@@ -112,6 +123,7 @@ const goods = [
         image: prod2,
         type: 'chair',
         category: 'Plants',
+        itemCount: 1,
     },
     {
         id: 13,
@@ -121,6 +133,7 @@ const goods = [
         image: prod3,
         type: 'chair',
         category: 'Plants',
+        itemCount: 1,
     },
     {
         id: 14,
@@ -130,6 +143,7 @@ const goods = [
         image: prod4,
         type: 'chair',
         category: 'Kitchen',
+        itemCount: 1,
     },
     {
         id: 15,
@@ -139,6 +153,7 @@ const goods = [
         image: prod1,
         type: 'chair',
         category: 'Kitchen',
+        itemCount: 1,
     },
     {
         id: 16,
@@ -148,6 +163,7 @@ const goods = [
         image: prod2,
         type: 'table',
         category: 'Kitchen',
+        itemCount: 1,
     },
     {
         id: 17,
@@ -157,6 +173,7 @@ const goods = [
         image: prod3,
         type: 'sofa',
         category: 'Workspace',
+        itemCount: 1,
     },
     {
         id: 18,
@@ -166,6 +183,7 @@ const goods = [
         image: prod4,
         type: 'footstool',
         category: 'Workspace',
+        itemCount: 1,
     },
     {
         id: 19,
@@ -175,6 +193,7 @@ const goods = [
         image: prod5,
         type: 'office',
         category: 'Workspace',
+        itemCount: 1,
     },
     {
         id: 20,
@@ -184,6 +203,7 @@ const goods = [
         image: prod1,
         type: 'chair',
         category: 'Workspace',
+        itemCount: 1,
     },
     {
         id: 21,
@@ -193,6 +213,7 @@ const goods = [
         image: prod2,
         type: 'chair',
         category: 'Workspace',
+        itemCount: 1,
     },
     {
         id: 22,
@@ -202,6 +223,7 @@ const goods = [
         image: prod3,
         type: 'chair',
         category: 'Workspace',
+        itemCount: 1,
     },
     {
         id: 23,
@@ -211,6 +233,7 @@ const goods = [
         image: prod4,
         type: 'chair',
         category: 'Kitchen',
+        itemCount: 1,
     },
     {
         id: 24,
@@ -220,6 +243,7 @@ const goods = [
         image: prod5,
         type: 'chair',
         category: 'Kitchen',
+        itemCount: 1,
     },
     {
         id: 25,
@@ -229,6 +253,7 @@ const goods = [
         image: prod1,
         type: 'chair',
         category: 'Workspace',
+        itemCount: 1,
     },
     {
         id: 26,
@@ -238,6 +263,7 @@ const goods = [
         image: prod2,
         type: 'chair',
         category: 'Workspace',
+        itemCount: 1,
     },
     {
         id: 27,
@@ -247,6 +273,7 @@ const goods = [
         image: prod3,
         type: 'chair',
         category: 'Furnitur',
+        itemCount: 1,
     },
     {
         id: 28,
@@ -256,6 +283,7 @@ const goods = [
         image: prod4,
         type: 'chair',
         category: 'Furniture',
+        itemCount: 1,
     },
 ];
 

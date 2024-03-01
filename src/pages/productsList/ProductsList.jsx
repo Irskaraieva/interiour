@@ -1,12 +1,14 @@
-import { NavLink } from 'react-router-dom';
 import '../productsList/productsList.scss';
 import { useGoods } from '../../context/GodsContext';
 import Card from '../../components/bestSellers/Card/Card';
 import ButtonsGroup from '../../components/buttons-group/ButtonsGroup';
+import { CartContext } from '../../context/CartContext';
+import { useContext } from 'react';
 
 const ProductsList = () => {
 
     const { hasGoods } = useGoods();
+    const { addToCart } = useContext(CartContext);
 
     return (
         <>
@@ -17,6 +19,7 @@ const ProductsList = () => {
                         hasGoods.map((good) => {
                             const { id, brand, name, price, image, type, category } = good;
                             const props = {
+                                id,
                                 brand,
                                 name,
                                 price,
@@ -24,10 +27,8 @@ const ProductsList = () => {
                                 img: image || imageDefault,
                                 category,
                             }
-                            return (
-                                <NavLink to={`/products/${id}`}>
-                                    <Card key={id} {...props} />
-                                </NavLink>
+                            return (                               
+                                <Card key={id} {...props} />                             
                             )
                         })
                     ) : (

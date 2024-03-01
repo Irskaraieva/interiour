@@ -5,6 +5,7 @@ import HomePage from "./pages/homePage/HomePage";
 import ProductsList from "./pages/productsList/ProductsList";
 import SignIn from "./pages/SignIn/SignIn";
 import SingleItemProd from "./components/singleItemProd/SingleItemProd";
+import Cart from "./pages/Cart/Cart";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/products" element={<ProductsList />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/products/:id" element={<SingleItemProd />} />
+          <Route path="/cart" element={<Cart />} />
         </Route>
       </Routes>
     </Router>

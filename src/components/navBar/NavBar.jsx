@@ -9,9 +9,9 @@ import InputSearch from '../inputSearch/InputSearch';
 function Navbar() {
 
     return (
-        <div className='nav-wrapper'>            
+        <div className='nav-wrapper'>
             <nav className="nav" id="nav">
-                
+
                 <div className='logo-mobile-container'>
                     <Logo />
                     <InputSearch />
@@ -29,7 +29,11 @@ function Navbar() {
                     </li>
                     <li><img className='bell' src={bell} alt='search-img' /></li>
                     <li><span className='vertical-line'></span></li>
-                    <li><img className='shopping-bag' src={shoppingBag} alt='search-img' /></li>
+                    <li>
+                        <NavLink to={'/cart'}>
+                            <img className='shopping-bag' src={shoppingBag} alt='search-img' />
+                        </NavLink>
+                    </li>
                     <li><span className='vertical-line'></span></li>
                     <li>
                         <NavLink to={'/sign-in'}>

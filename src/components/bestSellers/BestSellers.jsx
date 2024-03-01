@@ -51,6 +51,7 @@ const BestSellers = () => {
                         hasGoods.map((good) => {
                             const {id, brand, name, price, image, type,category } = good;
                             const props = {
+                                id,
                                 brand,
                                 name,
                                 price,
@@ -60,9 +61,7 @@ const BestSellers = () => {
                             }
                             return(
                                 <SwiperSlide key={id}>
-                                  <NavLink to={`/products/${id}`}>
-                                    <Card {...props} />
-                                  </NavLink>
+                                    <Card {...props} />                       
                                 </SwiperSlide>
                               );
                         })
