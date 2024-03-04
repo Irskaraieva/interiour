@@ -2,13 +2,10 @@ import '../productsList/productsList.scss';
 import { useGoods } from '../../context/GodsContext';
 import Card from '../../components/bestSellers/Card/Card';
 import ButtonsGroup from '../../components/buttons-group/ButtonsGroup';
-import { CartContext } from '../../context/CartContext';
-import { useContext } from 'react';
 
 const ProductsList = () => {
 
     const { hasGoods } = useGoods();
-    const { addToCart } = useContext(CartContext);
 
     return (
         <>

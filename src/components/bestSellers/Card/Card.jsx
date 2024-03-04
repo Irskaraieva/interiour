@@ -34,7 +34,9 @@ const Card = ({ id, name, brand, price, img }) => {
                     </ul>
                     <div className="card-bottom">
                         <span className="price"> $ {price}</span>
-                        <div className='shopping-bag' onClick={() => addToCart()}>
+                        <div className='shopping-bag' onClick={() => addToCart({
+                            id, name, price, image: img
+                        })}>
                             <img src={shoppingBag} height='32px' alt='search-img' />
                         </div>
                     </div>
