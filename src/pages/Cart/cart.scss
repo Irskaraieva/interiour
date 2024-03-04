@@ -7,7 +7,34 @@
   width: 90%;
   padding: 30px;
 
+  .total-wrapper {
+    width: fit-content;
+    margin: 0px 0px 0px auto;
+    font-family: var(--font-family);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 300;
 
+    span {
+      font-size: 18px;
+      font-weight: 400;
+      color: rgb(2, 70, 2);
+    }
+
+    button { 
+      background-color: rgba(0, 0, 0, 0.741);
+      padding: 8px 12px;
+      border-radius: 11px;
+      color: white;
+      font-size: 14px;
+      transition: .3s;
+
+      &:hover {
+        background-color: black;
+      }
+    }
+  }
   @media (max-width: 1000px) {
     width: 100%;
     padding: 20px 15px;

@@ -6,7 +6,7 @@ import { CartContext } from '../../context/CartContext';
 
 const Cart = () => {
 
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, setCartItems } = useContext(CartContext);
    
     return (
         <>
@@ -34,6 +34,12 @@ const Cart = () => {
 
                     <div className='total-wrapper'>
                         <p>Total price: <span>$900</span></p>
+                        <button
+                          className='clean-cart'
+                          onClick={() => setCartItems([])}
+                          >
+                            Clean Cart
+                        </button>
                     </div>
                 </div>
 
