@@ -34,6 +34,7 @@ export const CartContextProvider = (props) => {
         setCartItems((prevCartItems) => prevCartItems.filter((cartItem) => cartItem.id !== itemId));
     };
 
+
     const contextValue = {cartItems, setCartItems, addToCart, removeFromCart }
 
   return (

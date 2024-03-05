@@ -14,7 +14,7 @@ const SingleCartItem = ({ id, name, price, img, itemCount }) => {
     });
 
     useEffect(() => {
-        
+
         const cartItem = cartItems.find(item => item.id === id);
         if (cartItem) {
             setInputNum({
@@ -28,7 +28,7 @@ const SingleCartItem = ({ id, name, price, img, itemCount }) => {
     const totalPrice = inputNum.totalPrice;
 
     const increaseButton = () => {
-        
+
         const enterValue = parseInt(inputNum.inputNumber) || 0;
         const upDateValue = parseInt(inputNum.inputNumber) > 42 ? 42 : parseInt(enterValue) + 1;
 
@@ -43,7 +43,7 @@ const SingleCartItem = ({ id, name, price, img, itemCount }) => {
             setInputNum({
                 inputNumber: upDateValue,
                 totalPrice: (upDateValue * parseFloat(singlePrise)).toFixed(2)
-            });    
+            });
 
             setCartItems((prevCartItems) => {
                 return prevCartItems.map((cartItem) =>
@@ -65,7 +65,7 @@ const SingleCartItem = ({ id, name, price, img, itemCount }) => {
                 totalPrice: (newValue * parseFloat(singlePrise)).toFixed(2)
             });
 
-            
+
             setCartItems((prevCartItems) => {
                 return prevCartItems.map((cartItem) =>
                     cartItem.id === id ? { ...cartItem, itemCount: newValue } : cartItem
@@ -83,6 +83,13 @@ const SingleCartItem = ({ id, name, price, img, itemCount }) => {
                 totalPrice: (42 * parseFloat(singlePrise)).toFixed(2)
             });
             document.getElementById("maxQuantity").textContent = "Sorry, but max quantity is 42";
+
+            setCartItems((prevCartItems) => {
+                return prevCartItems.map((cartItem) =>
+                    cartItem.id === id ? { ...cartItem, itemCount: 42 } : cartItem
+                );
+            });
+
         }
         else if (inpNum < 0) {
 
@@ -91,6 +98,11 @@ const SingleCartItem = ({ id, name, price, img, itemCount }) => {
                 totalPrice: parseFloat(singlePrise).toFixed(2)
             });
             document.getElementById("maxQuantity").textContent = "";
+            setCartItems((prevCartItems) => {
+                return prevCartItems.map((cartItem) =>
+                    cartItem.id === id ? { ...cartItem, itemCount: 1 } : cartItem
+                );
+            });
         }
         else if (inpNum == 0) {
 
@@ -99,6 +111,11 @@ const SingleCartItem = ({ id, name, price, img, itemCount }) => {
                 totalPrice: parseFloat(singlePrise).toFixed(2)
             });
             document.getElementById("maxQuantity").textContent = "";
+            setCartItems((prevCartItems) => {
+                return prevCartItems.map((cartItem) =>
+                    cartItem.id === id ? { ...cartItem, itemCount: inpNum.replace(/^0/, 1) } : cartItem
+                );
+            });
         }
 
         else {
@@ -107,14 +124,13 @@ const SingleCartItem = ({ id, name, price, img, itemCount }) => {
                 totalPrice: (inpNum * parseFloat(singlePrise)).toFixed(2)
             })
             document.getElementById("maxQuantity").textContent = "";
+            setCartItems((prevCartItems) => {
+                return prevCartItems.map((cartItem) =>
+                    cartItem.id === id ? { ...cartItem, itemCount: inpNum } : cartItem
+                );
+            });
         }
-        setCartItems((prevCartItems) => {
-            return prevCartItems.map((cartItem) =>
-                cartItem.id === id ? { ...cartItem, itemCount: inpNum } : cartItem
-            );
-        });
 
-        
     }
 
     function someKeyDown(event) {

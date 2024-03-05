@@ -49,7 +49,7 @@ const BestSellers = () => {
                 >
                     {hasGoods.length > 0 ? (
                         hasGoods.map((good) => {
-                            const {id, brand, name, price, image, type,category } = good;
+                            const {id, brand, name, price, image, type, category } = good;
                             const props = {
                                 id,
                                 brand,
@@ -60,8 +60,8 @@ const BestSellers = () => {
                                 category,
                             }
                             return(
-                                <SwiperSlide key={id}>
-                                    <Card {...props} />                       
+                                <SwiperSlide key={id}>                                  
+                                    <Card {...props} />                                 
                                 </SwiperSlide>
                               );
                         })
