@@ -6,12 +6,22 @@ import logIn from './../../images/photo-content/log-in.svg';
 import Logo from '../logo/Logo';
 import InputSearch from '../inputSearch/InputSearch';
 import { CartContext } from '../../context/CartContext';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 function Navbar() {
 
     const { cartItems } = useContext(CartContext);
+    
+    const [count, setCount ] = useState(0);
     const isCartItems = cartItems.length > 0;
+
+    useEffect(() => {
+        const newTotalCount = cartItems.reduce((acc, item) => {
+          return acc + item.itemCount;
+        }, 0);
+    
+        setCount(newTotalCount);
+      }, [cartItems]);
 
     return (
         <div className='nav-wrapper'>
@@ -38,7 +48,7 @@ function Navbar() {
                         <NavLink to={'/cart'} className='shopping-bag-container'>
                             <img className='shopping-bag' src={shoppingBag} alt='search-img' />
                             {
-                                isCartItems ? <span className='item-count'>{cartItems.length}</span> : null
+                                isCartItems ? <span className='item-count'>{count}</span> : null
                             }
                             
                         </NavLink>

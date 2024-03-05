@@ -10,7 +10,6 @@ const Cart = () => {
 
   const [ total, setTotal ] = useState({
     price: 0,
-    quantity: 0
   });
 
   useEffect(() => {
