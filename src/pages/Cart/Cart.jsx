@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
+import { NavLink } from "react-router-dom";
 import '../Cart/cart.scss';
 import imageDefault from '../../images/products/all-products/default-img.png';
 import SingleCartItem from '../../components/singleCartItem/SingleCartItem';
@@ -8,13 +9,13 @@ const Cart = () => {
 
   const { cartItems, setCartItems } = useContext(CartContext);
 
-  const [ total, setTotal ] = useState({
+  const [total, setTotal] = useState({
     price: 0,
   });
 
   useEffect(() => {
     const newTotalPrice = cartItems.reduce((acc, item) => {
-      return acc + item.price*item.itemCount;
+      return acc + item.price * item.itemCount;
     }, 0);
 
     setTotal((prevTotal) => ({
@@ -35,7 +36,7 @@ const Cart = () => {
                   id,
                   name,
                   price,
-                  itemCount,                 
+                  itemCount,
                   img: image || imageDefault,
                 }
                 return (
@@ -43,25 +44,35 @@ const Cart = () => {
                 )
               })
             ) : (
-              <div className="text-info">No items</div>
+              <div className="text-info">
+                <p>There is nothing here</p>
+                <NavLink to={'/products'}>
+                  To the store <span> &rarr;</span>
+                </NavLink>
+              </div>
             )
           }
 
-          <div className='total-wrapper'>
-            <button
-              className='clean-cart'
-              onClick={() => setCartItems([])}
-            >
-              Clean Cart
-            </button>
-            <p>Total price: <span>${total.price}</span></p>
-            <button
-              className='buy'
-              onClick={() => setCartItems([])}
-            >
-              Buy
-            </button>
-          </div>
+          {cartItems.length > 0 ? (
+            <div className='total-wrapper'>
+              <button
+                className='clean-cart'
+                onClick={() => setCartItems([])}
+              >
+                Clean Cart
+              </button>
+              <p>Total price: <span>${total.price}</span></p>
+              <button
+                className='buy'
+                onClick={() => setCartItems([])}
+              >
+                Buy
+              </button>
+            </div>
+          ) : 
+          <>
+          </>
+          }
         </div>
 
 
