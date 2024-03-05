@@ -66,7 +66,7 @@ const BestSellers = () => {
                               );
                         })
                     ) : (
-                        <div className="text-info">No items</div>
+                        <div className="text-info">There is nothing here</div>
                     )
                     }
                 </Swiper>

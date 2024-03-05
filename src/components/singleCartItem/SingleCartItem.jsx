@@ -1,5 +1,6 @@
 import '../singleCartItem/singleCartItem.scss';
 import { useContext, useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import shoppingBag from '../../images/photo-content/shopping-bag.svg';
 import { CartContext } from '../../context/CartContext';
@@ -149,12 +150,15 @@ const SingleCartItem = ({ id, name, price, img, itemCount }) => {
     return (
         <>
             <div className='cart-item'>
-                <figure>
-                    <img src={img} alt="product" />
-                </figure>
-                <div className='product-name'>
+                <NavLink to={`/products/${id}`}>
+                    <figure>
+                        <img src={img} alt="product" />
+                    </figure>
+                </NavLink>
+                <NavLink to={`/products/${id}`} className='product-name'>
                     {name}
-                </div>
+                </NavLink>
+
                 <div className='quantity-wrapper'>
                     <p id="maxQuantity"></p>
                     <button className='decrease' onClick={() => decreaseButton()}>-</button>

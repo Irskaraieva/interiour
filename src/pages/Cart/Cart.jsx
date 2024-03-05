@@ -45,7 +45,7 @@ const Cart = () => {
               })
             ) : (
               <div className="text-info">
-                <p>There is nothing here</p>
+                <p>There is nothing in the cart</p>
                 <NavLink to={'/products'}>
                   To the store <span> &rarr;</span>
                 </NavLink>
@@ -69,9 +69,9 @@ const Cart = () => {
                 Buy
               </button>
             </div>
-          ) : 
-          <>
-          </>
+          ) : (
+            <></>
+          )
           }
         </div>
 
