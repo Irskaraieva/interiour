@@ -14,6 +14,8 @@ const SingleCartItem = ({ id, name, price, img, itemCount }) => {
         totalPrice: price,
     });
 
+    const [maxQuantityMessage, setMaxQuantityMessage] = useState('');
+
     useEffect(() => {
 
         const cartItem = cartItems.find(item => item.id === id);
@@ -34,13 +36,14 @@ const SingleCartItem = ({ id, name, price, img, itemCount }) => {
         const upDateValue = parseInt(inputNum.inputNumber) > 42 ? 42 : parseInt(enterValue) + 1;
 
         if (upDateValue > 42) {
-            document.getElementById("maxQuantity").textContent = "Sorry, but max quantity is 42";
+            setMaxQuantityMessage('Sorry, but max quantity is 42');
             setInputNum({
                 inputNumber: 42,
                 totalPrice: (42 * parseFloat(singlePrise)).toFixed(2)
             });
         }
         else {
+            setMaxQuantityMessage('');
             setInputNum({
                 inputNumber: upDateValue,
                 totalPrice: (upDateValue * parseFloat(singlePrise)).toFixed(2)
@@ -58,14 +61,14 @@ const SingleCartItem = ({ id, name, price, img, itemCount }) => {
         if (inputNum.inputNumber !== '') {
             const enterValue = parseInt(inputNum.inputNumber) - 1;
             const newValue = enterValue <= 0 ? 1 : enterValue;
-            const maxQuantity = newValue > 42 ? "Sorry, but max quantity is 42" : "";
-            document.getElementById("maxQuantity").textContent = maxQuantity;
+            newValue > 42 ? 
+            setMaxQuantityMessage('Sorry, but max quantity is 42') : 
+            setMaxQuantityMessage("");
 
             setInputNum({
                 inputNumber: newValue,
                 totalPrice: (newValue * parseFloat(singlePrise)).toFixed(2)
             });
-
 
             setCartItems((prevCartItems) => {
                 return prevCartItems.map((cartItem) =>
@@ -76,29 +79,28 @@ const SingleCartItem = ({ id, name, price, img, itemCount }) => {
     };
 
     function handInput(event) {
-        const inpNum = event.target.value;
+        const inpNum = parseFloat(event.target.value);
 
         if (inpNum > 42) {
+            setMaxQuantityMessage('Sorry, but max quantity is 42');
             setInputNum({
                 inputNumber: 42,
                 totalPrice: (42 * parseFloat(singlePrise)).toFixed(2)
             });
-            document.getElementById("maxQuantity").textContent = "Sorry, but max quantity is 42";
 
             setCartItems((prevCartItems) => {
                 return prevCartItems.map((cartItem) =>
                     cartItem.id === id ? { ...cartItem, itemCount: 42 } : cartItem
                 );
             });
-
-        }
+        }    
         else if (inpNum < 0) {
-
+            setMaxQuantityMessage('');
             setInputNum({
                 inputNumber: 1,
                 totalPrice: parseFloat(singlePrise).toFixed(2)
             });
-            document.getElementById("maxQuantity").textContent = "";
+
             setCartItems((prevCartItems) => {
                 return prevCartItems.map((cartItem) =>
                     cartItem.id === id ? { ...cartItem, itemCount: 1 } : cartItem
@@ -106,32 +108,31 @@ const SingleCartItem = ({ id, name, price, img, itemCount }) => {
             });
         }
         else if (inpNum == 0) {
-
+            setMaxQuantityMessage('');
             setInputNum({
                 inputNumber: inpNum.replace(/^0/, 1),
                 totalPrice: parseFloat(singlePrise).toFixed(2)
             });
-            document.getElementById("maxQuantity").textContent = "";
+
             setCartItems((prevCartItems) => {
                 return prevCartItems.map((cartItem) =>
                     cartItem.id === id ? { ...cartItem, itemCount: inpNum.replace(/^0/, 1) } : cartItem
                 );
             });
-        }
-
+        } 
         else {
+            setMaxQuantityMessage('');
             setInputNum({
                 inputNumber: inpNum,
                 totalPrice: (inpNum * parseFloat(singlePrise)).toFixed(2)
             })
-            document.getElementById("maxQuantity").textContent = "";
+
             setCartItems((prevCartItems) => {
                 return prevCartItems.map((cartItem) =>
-                    cartItem.id === id ? { ...cartItem, itemCount: inpNum } : cartItem
+                    cartItem.id === id ? { ...cartItem, itemCount: parseFloat(inpNum) } : cartItem
                 );
             });
         }
-
     }
 
     function someKeyDown(event) {
@@ -160,7 +161,7 @@ const SingleCartItem = ({ id, name, price, img, itemCount }) => {
                 </NavLink>
 
                 <div className='quantity-wrapper'>
-                    <p id="maxQuantity"></p>
+                    <p>{maxQuantityMessage}</p>
                     <button className='decrease' onClick={() => decreaseButton()}>-</button>
                     <input
                         type='number'
