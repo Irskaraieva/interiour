@@ -6,15 +6,7 @@
   text-align: center;
   position: relative;
 
-  .logo-desktop {
-    width: 26%;
-    
-    @media (max-width: 1000px) {
-      display: none;
-    }
-  }
-
-  @media (max-width: 1000px) {
+  @media (max-width: 1200px) {
     padding: 0px;
   }
 }
@@ -36,22 +28,21 @@
 }
 
 .nav {
-  padding: 20px 15px; 
-  border-radius: 11px;
-  margin-left: 24px;
-  margin-right: 24px;
-  background-color: #f6f6f6;
+  padding: 0px;  
   height: max-content;
   font-family: var(--font-family-abel);
   flex-grow: 1;
 
+  @media (max-width: 1200px) {
+    margin: 0;
+  }
 
-  .logo-mobile-container {
-    border-radius: 11px;
+  .logo-mobile-container {  
     display: flex;
     background-color: #1e1e1e;
-    align-items: center;    
-    padding: 15px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 15px;
 
     .logo {
       width: fit-content;
@@ -72,12 +63,13 @@
       right: -3px;
     }
 
-    .input-box {      
+    .input-box {
+      width: 40%;   
       height: 40px;
-      margin: 0 auto;      
+      margin: 0 auto;     
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       flex-wrap: wrap;
    
       .input-box {      
@@ -92,7 +84,10 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15px;
+    background-color: #f6f6f6;
+    border-radius: 11px;
+    margin: 20px 20px 0px;
+    padding: 20px;
     gap: 30px;
 
     @media (max-width: 1400px) {
@@ -100,10 +95,9 @@
     }
 
     @media (max-width: 1000px) {     
+      margin: 10px 0px;
+      padding: 15px;
 
-      .input-desktop {
-        display: none;
-      }
     }
   }
 

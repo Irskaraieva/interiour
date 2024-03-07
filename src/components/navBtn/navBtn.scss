@@ -6,8 +6,8 @@ button.nav-mob-btn {
   --radius: 4px;
   position: relative;
   position: absolute;
-  top: 45px;
-  right: 100px;
+  top: 38px;
+  right: 44px;
   height: var(--height);
   width: var(--width);
   color: rgb(241, 236, 236);
@@ -18,10 +18,13 @@ button.nav-mob-btn {
   z-index: 50;
   display: flex;
 
-  .filter-mobile {
-    position: absolute;
-    right: -45px;
-    font-size: 16px;
+  @media (max-width: 1200px) {
+    right: 30px;
+  }
+
+  @media (max-width: 900px) {
+    top: 32px;
+    right: 20px;
   }
 }
 
@@ -60,11 +63,6 @@ button.nav-mob-btn {
 
 .nav-mob-btn.active {
   height: 30px;
-  right: 95px;
-
-  .filter-mobile {
-    right: -40px;
-  }
 }
 
 .mob-nav-wrapper {
@@ -93,7 +91,7 @@ button.nav-mob-btn {
   top: 0;
   right: 0;
   width: 440px;
-  padding: 60px 30px;
+  padding: 60px 15px 60px 30px;
   background-color: rgba(30, 30, 30, 0.94);
   align-items: center;
   pointer-events: all;

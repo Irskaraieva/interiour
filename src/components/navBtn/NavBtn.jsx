@@ -5,13 +5,12 @@ import Filters from "../filters/Filters";
 function NavBtn() {
     const [isActive, setIsActive] = useState(false);
 
-    // useEffect(() => {
-    //     if (isActive) {
-    //         document.body.classList.remove("no-scroll");
-    //         setIsActive(false);
-    //     } 
-        
-    // }, [isActive]);
+    useEffect(() => {
+        if (isActive) {
+            document.body.classList.remove("no-scroll");
+            setIsActive(false);
+        }        
+    }, []);
 
     const toggleActive = () => {
         setIsActive(!isActive);
@@ -27,8 +26,7 @@ function NavBtn() {
             <button className={btnClass} onClick={toggleActive}>              
                 <div className="burger-line"></div>
                 <div className="burger-line"></div>
-                <div className="burger-line"></div>
-                <span className="filter-mobile">Filter</span>
+                <div className="burger-line"></div>                
             </button>
             <div className={mobWrapperClass}>
                 <nav className={navClass}>  

@@ -3,14 +3,10 @@ import { NavLink } from "react-router-dom";
 import shoppingBag from './../../images/photo-content/shopping-bag.svg';
 import logIn from './../../images/photo-content/log-in.svg';
 import Logo from '../logo/Logo';
-import { RiMenu2Fill } from "react-icons/ri";
 import bell from '../../images/photo-content/bell.svg';
-
 import InputSearch from '../inputSearch/InputSearch';
 import { CartContext } from '../../context/CartContext';
 import { useContext, useEffect, useState } from 'react';
-import Filters from '../filters/Filters';
-import NavBtn from '../navBtn/NavBtn';
 
 function Navbar() {
 
@@ -33,7 +29,6 @@ function Navbar() {
                 <div className='logo-mobile-container'>
                     <Logo />
                     <InputSearch />
-                    <NavBtn />
                 </div>
                 <ul className="nav-list">
                     <li>
