@@ -1,14 +1,22 @@
 .nav-wrapper {
   background-color: #fff;
-  padding: 15px 0px;
+  padding: 0px  0px 15px 0px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
+  position: relative;
 
+  .logo-desktop {
+    width: 26%;
+    
+    @media (max-width: 1000px) {
+      display: none;
+    }
+  }
 
   @media (max-width: 1000px) {
     padding: 0px;
   }
-
 }
 
 .shopping-bag-container {
@@ -18,7 +26,7 @@
     position: absolute;
     top: -15px;
     right: -14px;
-    background-color: rgba(189, 95, 1, 0.979);
+    background-color: rgba(189, 95, 1, 0.856);
     color: rgb(253, 253, 253);
     border-radius: 50%;
     padding: 3px 8px;
@@ -28,7 +36,7 @@
 }
 
 .nav {
-  padding: 30px;  
+  padding: 20px 15px; 
   border-radius: 11px;
   margin-left: 24px;
   margin-right: 24px;
@@ -37,9 +45,6 @@
   font-family: var(--font-family-abel);
   flex-grow: 1;
 
-  @media (max-width: 1000px) {
-    padding: 30px 20px;
-  }
 
   .logo-mobile-container {
     border-radius: 11px;
@@ -69,11 +74,7 @@
 
     .input-box {      
       height: 40px;
-      margin: 0 auto;
-    }
-
-    @media (min-width: 1000px) {
-      display: none;
+      margin: 0 auto;      
     }
 
     @media (max-width: 600px) {
@@ -86,28 +87,19 @@
      }
   }
 
-  @media (max-width: 1400px) {
-    padding: 20px 15px;
-  }
-
-  @media (max-width: 1000px) {
-    padding: 10px 15px;
-    margin: 0;
-  }
-
   .nav-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    margin-top: 15px;
     gap: 30px;
 
     @media (max-width: 1400px) {
       gap: inherit;
     }
 
-    @media (max-width: 1000px) {
-      padding-top: 20px;
+    @media (max-width: 1000px) {     
 
       .input-desktop {
         display: none;

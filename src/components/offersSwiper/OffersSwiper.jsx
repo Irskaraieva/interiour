@@ -34,6 +34,12 @@ const OffersSwiper = () => {
                     },                                          
                     700: {
                         slidesPerView: 2
+                    },                                          
+                    1000: {
+                        slidesPerView: 2.5
+                    },                                          
+                    1400: {
+                        slidesPerView: 3
                     }
                 }}
                 modules={[Navigation]}

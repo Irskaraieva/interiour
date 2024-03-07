@@ -39,9 +39,9 @@ const BestSellers = () => {
                         460: { slidesPerView: 2 },
                         562: { slidesPerView: 2.5 }, 
                         800: { slidesPerView: 3.5 },                        
-                        1000: { slidesPerView: 2.5 },
-                        1200: { slidesPerView: 3 },
-                        1700: { slidesPerView: 3.5 }
+                      
+                        1200: { slidesPerView: 3.7 },
+                        1700: { slidesPerView: 4.5 }
                     }}
                     modules={[Navigation, Scrollbar]}
                     className="mySwiper"
