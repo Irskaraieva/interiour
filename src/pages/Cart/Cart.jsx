@@ -54,6 +54,7 @@ const Cart = () => {
           }
 
           {cartItems.length > 0 ? (
+            <>
             <div className='total-wrapper'>
               <button
                 className='clean-cart'
@@ -69,6 +70,14 @@ const Cart = () => {
                 Buy
               </button>
             </div>
+            <div className="text-info">
+                <NavLink to={'/products'}>
+                  Back to the store <span> &rarr;</span>
+                </NavLink>
+            </div>
+
+            </>
+
           ) : (
             <></>
           )

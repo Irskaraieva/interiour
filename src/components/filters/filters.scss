@@ -190,6 +190,14 @@
   }
 }
 
+.filter-products {
+  max-height: 380px;
+
+  @media (max-width: 1400px) {
+    max-height: 320px;
+  }
+}
+
 .filter-store-item {
   display: flex;
   justify-content: baseline;

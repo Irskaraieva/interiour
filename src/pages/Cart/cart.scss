@@ -19,7 +19,7 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      width: 160px;
+      min-width: 180px;
       font-family: var(--font-family-abel);
       font-size: 18px;
       padding: 8px 0px 8px 14px;
@@ -27,6 +27,7 @@
       border-radius: 11px;
       gap: 12px;
       transition: all .3s;
+      margin-top: 8px;
 
       span {
         margin-bottom: 5px;
