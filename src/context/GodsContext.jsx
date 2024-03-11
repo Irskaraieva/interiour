@@ -7,6 +7,8 @@ export const GoodsProvider = ({ children }) => {
   const [selectedCategory, setSelectedCategory] = useState('All Products');
   const [hasGoods, setHasGoods] = useState(goods);
   const [checkedItems, setCheckedItems] = useState([]);
+  const [value, setValue] = useState([100, 1200]);
+  const [ minPrice, maxPrice ] = value;
 
   return (
     <GoodsContext.Provider value={{
@@ -16,7 +18,11 @@ export const GoodsProvider = ({ children }) => {
       setHasGoods,
       goods,
       checkedItems,
-      setCheckedItems
+      setCheckedItems,
+      value,
+      setValue,
+      minPrice,
+      maxPrice
       }}>
       {children}
     </GoodsContext.Provider>

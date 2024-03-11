@@ -10,14 +10,13 @@ import '../filters/filters.scss';
 import { useGoods } from '../../context/GodsContext';
 
 const Filters = () => {
-    const { checkedItems, setCheckedItems } = useGoods(); 
+    const { checkedItems, setCheckedItems, value, setValue } = useGoods(); 
 
     const [displayedStore, setDisplayedStore] = useState(store);
     const [displayedProducts, setDisplayedProducts] = useState(products);
     const [checkedItemsProd, setCheckedItemsProd] = useState([]);
     const [openFilterStore, setOpenFilterStore] = useState(false);
     const [openFilterProd, setOpenFilterProd] = useState(false);
-    const [value, setValue] = useState([100, 1200]);
     const hasProducts = displayedProducts.length > 0;
     const hasStore = displayedStore.length > 0;
 
@@ -49,6 +48,7 @@ const Filters = () => {
     const handleResetFilters = () => {
         setCheckedItemsProd([]);
         setCheckedItems([]);
+        setValue([100, 1200]);
     }
 
     const arrowClass = openFilterStore ? "rotate" : "";

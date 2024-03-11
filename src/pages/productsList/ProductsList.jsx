@@ -2,7 +2,6 @@ import '../productsList/productsList.scss';
 import { useGoods } from '../../context/GodsContext';
 import Card from '../../components/bestSellers/Card/Card';
 import ButtonsGroup from '../../components/buttons-group/ButtonsGroup';
-import Aside from '../../components/aside/Aside';
 
 const ProductsList = () => {
 
