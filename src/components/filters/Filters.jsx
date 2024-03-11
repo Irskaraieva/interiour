@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { IoFilterSharp } from "react-icons/io5";
 import mark from './../../images/photo-content/mark.png';
 import arrow from './../../images/photo-content/arrow.png';
@@ -48,7 +48,8 @@ const Filters = () => {
     const handleResetFilters = () => {
         setCheckedItemsProd([]);
         setCheckedItems([]);
-        setValue([100, 1200]);
+        setValue([100, 1200]);        
+        
     }
 
     const arrowClass = openFilterStore ? "rotate" : "";
@@ -122,6 +123,7 @@ const Filters = () => {
                     onInput={(value, index) => setValue(value)}
                     min={0}
                     max={2000}
+                    value={value}
                     step={10} />
                 <span className='min-price'>
                     $0

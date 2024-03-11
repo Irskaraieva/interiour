@@ -9,6 +9,8 @@ export const GoodsProvider = ({ children }) => {
   const [checkedItems, setCheckedItems] = useState([]);
   const [value, setValue] = useState([100, 1200]);
   const [ minPrice, maxPrice ] = value;
+  console.log(value);
+  console.log(minPrice, maxPrice);
 
   return (
     <GoodsContext.Provider value={{
