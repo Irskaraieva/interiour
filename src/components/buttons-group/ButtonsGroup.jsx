@@ -1,38 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import '../buttons-group/buttonsGroup.scss';
 import { useGoods } from '../../context/GodsContext';
 import arrow from './../../images/photo-content/arrow.png';
 
 const ButtonsGroup = () => {
 
-    const { selectedCategory, setSelectedCategory, hasGoods, setHasGoods, goods, checkedItems, minPrice, maxPrice } = useGoods();
+    const { setSelectedCategory, hasGoods, setHasGoods} = useGoods();
     const [selectedSort, setSelectedSort] = useState('Low-hight');
     const [visibleList, setVisibleList] = useState(false);
     const [activeButton, setActiveButton] = useState(0);
 
-    useEffect(() => {
-        let filteredGoods = [...goods];
-
-        if (selectedCategory !== 'All Products') {
-            filteredGoods = filteredGoods.filter(item =>
-                item.type.toLowerCase() === selectedCategory.toLowerCase()
-            );
-        }
-
-        if (checkedItems.length > 0) {
-            filteredGoods = filteredGoods.filter(item =>
-                checkedItems.includes(item.brand)
-            );
-        }
-
-        if (minPrice && maxPrice) {
-            filteredGoods = filteredGoods.filter(item =>
-                item.price >= minPrice && item.price <= maxPrice
-            );
-        }
-
-        setHasGoods(filteredGoods);
-    }, [selectedCategory, checkedItems, minPrice, maxPrice]);
 
     const handleSelectChange = (sortType) => {
         setSelectedSort(sortType);

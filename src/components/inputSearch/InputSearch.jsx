@@ -1,11 +1,11 @@
 import "../inputSearch/inputSearch.scss";
-import { useState } from "react";
 import searchImg from './../../images/photo-content/search.svg';
+import { useGoods } from "../../context/GodsContext";
 
 
 const InputSearch = () => {
 
-    const [searchValue, setSearchValue] = useState('');
+    const { searchValue, setSearchValue } = useGoods();
 
     const handleSearchChange = (event) => {
         setSearchValue(event.target.value);
