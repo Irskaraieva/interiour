@@ -8,6 +8,7 @@ export const GoodsProvider = ({ children }) => {
   const [hasGoods, setHasGoods] = useState(goods);
   const [searchValue, setSearchValue] = useState('');
   const [checkedItems, setCheckedItems] = useState([]);
+  const [filteredByName, setFilteredByName] = useState([]);
   const [value, setValue] = useState([100, 1200]);
   const [ minPrice, maxPrice ] = value;
 
@@ -28,11 +29,11 @@ export const GoodsProvider = ({ children }) => {
         );
       }
 
-      if (searchValue.trim() !== '') {
-        filteredGoods = filteredGoods.filter(item =>
-          item.name.toLowerCase().includes(searchValue.toLowerCase())
-        );
-      }
+      // if (searchValue.trim() !== '') {
+      //   filteredGoods = filteredGoods.filter(item =>
+      //     item.name.toLowerCase().includes(searchValue.toLowerCase())
+      //   );
+      // }
 
       if (minPrice && maxPrice) {
         filteredGoods = filteredGoods.filter(item =>
@@ -45,7 +46,22 @@ export const GoodsProvider = ({ children }) => {
 
     filterGoods();
 
-  }, [selectedCategory, checkedItems, searchValue, minPrice, maxPrice]);
+  }, [selectedCategory, checkedItems, minPrice, maxPrice]);
+
+  useEffect(() => {
+    const filterByName = () => {
+      if (searchValue.trim() !== '') {
+        const filteredByNameArray = goods.filter((item) =>
+          item.name.toLowerCase().includes(searchValue.toLowerCase())
+        );        
+        setFilteredByName(filteredByNameArray);        
+      } else {
+        setFilteredByName([]);
+      }
+    };
+
+    filterByName();
+  }, [searchValue]);
 
   return (
     <GoodsContext.Provider value={{
@@ -61,7 +77,9 @@ export const GoodsProvider = ({ children }) => {
       minPrice,
       maxPrice,
       searchValue,
-      setSearchValue
+      setSearchValue,
+      filteredByName,
+      setFilteredByName
       }}>
       {children}
     </GoodsContext.Provider>
