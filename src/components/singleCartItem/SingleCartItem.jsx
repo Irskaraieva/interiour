@@ -94,7 +94,7 @@ const SingleCartItem = ({ id, name, price, img, itemCount }) => {
                 );
             });
         }    
-        else if (inpNum < 0) {
+        else if (isNaN(inpNum) || inpNum < 0) {
             setMaxQuantityMessage('');
             setInputNum({
                 inputNumber: 1,
@@ -109,8 +109,10 @@ const SingleCartItem = ({ id, name, price, img, itemCount }) => {
         }
         else if (inpNum == 0) {
             setMaxQuantityMessage('');
+            const newValue = inpNum.toString().replace(/^0/, 1);
+
             setInputNum({
-                inputNumber: inpNum.replace(/^0/, 1),
+                inputNumber: parseFloat(newValue),
                 totalPrice: parseFloat(singlePrise).toFixed(2)
             });
 
