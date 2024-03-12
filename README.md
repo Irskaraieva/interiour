@@ -1,6 +1,6 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Responsive SPA built with React. Realized registration using Firebase. There is a page of all products, a separate product page, a product filter, a page with a working shopping cart. Sliders on the main page are also used. Product search is implemented on the page by the name entered by the user in the search field. The header has an additional product filter by brand and price range, which opens as a mobile menu.
 
 Currently, two official plugins are available:
 
