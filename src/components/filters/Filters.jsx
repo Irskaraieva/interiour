@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { IoFilterSharp } from "react-icons/io5";
 import mark from './../../images/photo-content/mark.png';
 import arrow from './../../images/photo-content/arrow.png';
 import RangeSlider from 'react-range-slider-input';
 import 'react-range-slider-input/dist/style.css';
-import { products } from '../../helpers/Products';
 import { store } from '../../helpers/Stores';
 import '../filters/filters.scss';
 import { useGoods } from '../../context/GodsContext';
@@ -13,11 +12,8 @@ const Filters = () => {
     const { checkedItems, setCheckedItems, value, setValue } = useGoods(); 
 
     const [displayedStore, setDisplayedStore] = useState(store);
-    const [displayedProducts, setDisplayedProducts] = useState(products);
-    const [checkedItemsProd, setCheckedItemsProd] = useState([]);
     const [openFilterStore, setOpenFilterStore] = useState(false);
-    const [openFilterProd, setOpenFilterProd] = useState(false);
-    const hasProducts = displayedProducts.length > 0;
+    
     const hasStore = displayedStore.length > 0;
 
     const handleItemClick = (storeItem) => {
@@ -28,34 +24,18 @@ const Filters = () => {
         }
     };
 
-    const handleItemClickProd = (prodItem) => {
-        const itemIdentifier = prodItem.name;
-        if (checkedItemsProd.includes(itemIdentifier)) {
-            setCheckedItemsProd(checkedItemsProd.filter(item => item !== itemIdentifier));
-        } else {
-            setCheckedItemsProd([...checkedItemsProd, itemIdentifier]);
-        }
-    };
-
     const handleOpenStore = () => {
         setOpenFilterStore(!openFilterStore)
     }
 
-    const handleOpenProd = () => {
-        setOpenFilterProd(!openFilterProd)
-    }
-
     const handleResetFilters = () => {
-        setCheckedItemsProd([]);
         setCheckedItems([]);
         setValue([100, 1200]);        
         
     }
 
     const arrowClass = openFilterStore ? "rotate" : "";
-    const arrowProdClass = openFilterProd ? "rotate" : "";
     const filterStoreClass = !openFilterStore ? "filter-store" : "filter-store hide";
-    const filterProdClass = !openFilterProd ? "filter-products" : "filter-products hide";
 
     return (
         <section className='filters'>
@@ -95,7 +75,7 @@ const Filters = () => {
                 </div>
             </div>
 
-            <div className='filter-wraper'>
+            {/* <div className='filter-wraper'>
                 <div className='is-flex' onClick={handleOpenProd}>
                     <span>Products</span>
                     <img src={arrow} alt='arrow' className={arrowProdClass} />
@@ -115,7 +95,7 @@ const Filters = () => {
                     )
                     }
                 </div>
-            </div>
+            </div> */}
             <div className='filter-range'>
                 <span>Price Range</span>
                 <RangeSlider
