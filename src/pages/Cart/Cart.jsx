@@ -67,7 +67,7 @@ const Cart = () => {
                 className='buy'
                 onClick={() => setCartItems([])}
               >
-                Buy
+                Proceed to payment
               </button>
             </div>
             <div className="text-info">

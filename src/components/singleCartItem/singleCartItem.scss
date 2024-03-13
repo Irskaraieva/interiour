@@ -4,7 +4,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  font-size: 14px;
+  font-size: 16px;
 
   figure {
     width: 70px;
@@ -24,9 +24,7 @@
     color: rgba(0, 0, 0, 0.9);
     width: 35%;
 
-    @media (max-width: 460px) {
-      width: 40%;
-    }
+
   }
 
   .quantity-wrapper {
@@ -34,10 +32,14 @@
     text-align: center;
     position: relative;
 
+    @media (max-width: 640px) {
+      width: 40%;
+    }
+
     p {
       position: absolute;
       top: -20px;
-      left: -38px;
+      right: -25%;
       color: rgb(231, 62, 0);
       font-size: 12px;
       line-height: 16px;
@@ -46,12 +48,17 @@
       z-index: 10;
       width: fit-content;
       text-wrap: nowrap;
+
+      @media (max-width: 640px) {
+        right: 12%;
+      }
     }
 
     input {
-      width: 30px;
-      height: 26px;
+      width: 36px;
+      height: 30px;
       border-radius: 6px;
+      font-size: 16px;
       outline: none;
       user-select: none;
       border: none;
@@ -71,8 +78,8 @@
     }
 
     button {
-      font-size: 18px;
-      width: 18px;
+      font-size: 20px;
+      width: 22px;
     }
   }
 
@@ -81,10 +88,12 @@
     color: rgb(2, 70, 2);
     width: 90px;
     
-    @media (max-width: 460px) {
-      padding-left: 15px;
+    @media (max-width: 640px) {
       width: 40%;
+       padding-left: 15px;
+      
     }
+
   }
 
   .delete {
@@ -96,8 +105,8 @@
     transition: all 0.3s;
 
     @media (max-width: 1000px) {
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
     }
 
     &:hover {

@@ -11,6 +11,10 @@
     gap: 5px;
   }
 
+  @media (max-width: 437px) {
+    gap: 15px;
+  }
+
   .card {
     margin-top: 45px;
     width: 320px;
@@ -27,14 +31,14 @@
 
       .price {
         width: 72px;
-        height: 30px;
-        line-height: 30px;
+        height: 35px;
+        line-height: 35px;
         font-size: 16px;
       }
 
       .shopping-bag {
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        height: 35px;
 
         img {
           height: 100%;
@@ -43,8 +47,7 @@
     }
 
     @media (max-width: 686px) {
-      max-width: 250px;
-      width: 250px;
+      width: 45%;
 
       .card-description {
         gap: 3px;
@@ -60,39 +63,23 @@
       }
 
       .card-bottom {
-        margin-top: 3px;
+        justify-content: space-between;
       }
 
       .brand-name {
         font-size: 13px;
       }
-
-      .price {
-        width: 62px;
-        height: 24px;
-        line-height: 24px;
-        font-size: 14px;
-      }
-
-      .shopping-bag {
-        height: 26px;
-      }
     }
 
     @media (max-width: 542px) {
-      
-      max-width: 200px;
-      height: 200px;
-
       .prod-img {
-        top: -74px;
-        height: 90%;
-        width: 100%;
+        top: -32%;
+        height: 96%;
       }
 
       .card-description {
         width: 100%;
-        height: fit-content;
+        gap: 5px;
 
         .good-name {
           line-height: 18px;
@@ -106,9 +93,7 @@
     }
 
     @media (max-width: 437px) {
-      padding: 10px;
-      max-width: 140px;
-      height: 180px;
+      width: 90%;
     }
   }
 }
