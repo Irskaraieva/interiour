@@ -15,7 +15,6 @@ import product6 from "./../../images/products/offers/prod-6.jpg";
 SwiperCore.use([Navigation]);
 
 const OffersSwiper = () => {
-
     return (
         <div className="offers-swiper-wrapper">
             <Swiper
@@ -31,13 +30,13 @@ const OffersSwiper = () => {
                     },
                     500: {
                         slidesPerView: 1.5
-                    },                                          
+                    },
                     700: {
                         slidesPerView: 2
-                    },                                          
+                    },
                     1000: {
                         slidesPerView: 2.5
-                    },                                          
+                    },
                     1400: {
                         slidesPerView: 3
                     }
@@ -46,83 +45,83 @@ const OffersSwiper = () => {
                 className="mySwiper"
             >
                 <SwiperSlide>
-                <div className='image-wrapper' style={{ backgroundImage: `url(${product6})` }}>
-                    <div className='offers-info'>
-                        <header className='ofice-infor-header'>
-                            <h2>Hight Quality <br /> Furniture</h2>
-                        </header>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam obcaecati illum, quasi.</p>
-                        <button className='explore-now'>
-                            Explore Now
-                        </button>
+                    <div className='image-wrapper' style={{ backgroundImage: `url(${product6})` }}>
+                        <div className='offers-info'>
+                            <header className='ofice-infor-header'>
+                                <h2>Hight Quality <br /> Furniture</h2>
+                            </header>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam obcaecati illum, quasi.</p>
+                            <button className='explore-now'>
+                                Explore Now
+                            </button>
+                        </div>
                     </div>
-                </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className='image-wrapper' style={{ backgroundImage: `url(${product5})` }}>
-                    <div className='discount-info'>
-                        <header className='discount-info-header'>
-                            <h2>Discount Up to</h2>
-                            <span>70%</span>
-                        </header>
-                        <p>
-                            <span className='discount-arrow'><img src={arrow} alt='arrow' /> </span>
-                            <span>Lorem ipsum dolor sit amet</span>
-                        </p>
+                    <div className='image-wrapper' style={{ backgroundImage: `url(${product5})` }}>
+                        <div className='discount-info'>
+                            <header className='discount-info-header'>
+                                <h2>Discount Up to</h2>
+                                <span>70%</span>
+                            </header>
+                            <p>
+                                <span className='discount-arrow'><img src={arrow} alt='arrow' /> </span>
+                                <span>Lorem ipsum dolor sit amet</span>
+                            </p>
+                        </div>
                     </div>
-                </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='image-wrapper' style={{ backgroundImage: `url(${product4})` }}>
-                    <div className='offers-info'>
-                        <header className='ofice-infor-header'>
-                            <h2>Hight Quality <br /> Furniture</h2>
-                        </header>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam obcaecati illum, quasi.</p>
-                        <button className='explore-now'>
-                            Explore Now
-                        </button>
-                    </div>
+                        <div className='offers-info'>
+                            <header className='ofice-infor-header'>
+                                <h2>Hight Quality <br /> Furniture</h2>
+                            </header>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam obcaecati illum, quasi.</p>
+                            <button className='explore-now'>
+                                Explore Now
+                            </button>
+                        </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='image-wrapper' style={{ backgroundImage: `url(${product3})` }}>
-                    <div className='discount-info'>
-                        <header className='discount-info-header'>
-                            <h2>Discount Up to</h2>
-                            <span>70%</span>
-                        </header>
-                        <p>
-                            <span className='discount-arrow'><img src={arrow} alt='arrow' /> </span>
-                            <span>Lorem ipsum dolor sit amet</span>
-                        </p>
-                    </div>
+                        <div className='discount-info'>
+                            <header className='discount-info-header'>
+                                <h2>Discount Up to</h2>
+                                <span>70%</span>
+                            </header>
+                            <p>
+                                <span className='discount-arrow'><img src={arrow} alt='arrow' /> </span>
+                                <span>Lorem ipsum dolor sit amet</span>
+                            </p>
+                        </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='image-wrapper' style={{ backgroundImage: `url(${product2})` }}>
-                    <div className='offers-info'>
-                        <header className='ofice-infor-header'>
-                            <h2>Hight Quality <br /> Furniture</h2>
-                        </header>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam obcaecati illum, quasi.</p>
-                        <button className='explore-now'>
-                            Explore Now
-                        </button>
-                    </div>
+                        <div className='offers-info'>
+                            <header className='ofice-infor-header'>
+                                <h2>Hight Quality <br /> Furniture</h2>
+                            </header>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam obcaecati illum, quasi.</p>
+                            <button className='explore-now'>
+                                Explore Now
+                            </button>
+                        </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='image-wrapper' style={{ backgroundImage: `url(${product1})` }}>
-                    <div className='offers-info'>
-                        <header className='ofice-infor-header'>
-                            <h2>Hight Quality <br /> Furniture</h2>
-                        </header>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam obcaecati illum, quasi.</p>
-                        <button className='explore-now'>
-                            Explore Now
-                        </button>
-                    </div>
+                        <div className='offers-info'>
+                            <header className='ofice-infor-header'>
+                                <h2>Hight Quality <br /> Furniture</h2>
+                            </header>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam obcaecati illum, quasi.</p>
+                            <button className='explore-now'>
+                                Explore Now
+                            </button>
+                        </div>
                     </div>
                 </SwiperSlide>
 

@@ -23,8 +23,6 @@
     line-height: 32px;
     color: rgba(0, 0, 0, 0.9);
     width: 35%;
-
-
   }
 
   .quantity-wrapper {
@@ -87,13 +85,11 @@
     font-weight: 400;
     color: rgb(2, 70, 2);
     width: 90px;
-    
+
     @media (max-width: 640px) {
       width: 40%;
-       padding-left: 15px;
-      
+      padding-left: 15px;
     }
-
   }
 
   .delete {

@@ -4,6 +4,13 @@
   overflow: hidden;
   background-color: #fff;  
   overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.loader {
+  margin: 100px auto;
 }
 
 .content-wrapper {
