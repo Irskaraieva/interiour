@@ -63,12 +63,14 @@
       }
 
       header {
+        
         h2 {
           font-size: calc(18px + (40 - 18) * ((100vw - 360px) / 1400));
           font-weight: bold;
           position: absolute;
           top: 13%;
           z-index: 5;
+          text-align: left;
 
           @media (max-width: 900px) {
             font-size: calc(18px + (30 - 18) * ((100vw - 360px) / 1400));
@@ -84,6 +86,7 @@
         font-size: 16px;
         color: #fff;
         z-index: 5;
+        text-align: left;
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
