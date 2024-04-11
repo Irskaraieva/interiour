@@ -51,8 +51,13 @@
     }
 
     .offers-info {
-      position: relative;
-      height: 100%;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      gap: calc(2px + (25 - 2) * ((100vw - 360px) / 1400));
+      top: 14%;
+      z-index: 5; 
+      height: 76%;
       width: 76%;
       overflow: hidden;
       color: #fff;
@@ -62,14 +67,15 @@
         width: 86%;
       }
 
+      @media (max-width: 900px) {
+        height: 84%;
+      }
+
       header {
-        
+     
         h2 {
           font-size: calc(18px + (40 - 18) * ((100vw - 360px) / 1400));
           font-weight: bold;
-          position: absolute;
-          top: 13%;
-          z-index: 5;
           text-align: left;
 
           @media (max-width: 900px) {
@@ -80,9 +86,7 @@
       }
 
       p {
-        position: absolute;
         overflow-y: hidden;
-        top: 43%;
         font-size: 16px;
         color: #fff;
         z-index: 5;
@@ -91,7 +95,7 @@
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         text-overflow: ellipsis;
-
+        
         @media (max-width: 900px) {
           font-size: 13px;
         }
@@ -99,7 +103,8 @@
 
       button.explore-now {
         position: absolute;
-        top: 76%;
+        bottom: 0;
+        right: 0;
         border-radius: 7px;
         width: 170px;
         height: 45px;
