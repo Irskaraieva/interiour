@@ -32,4 +32,36 @@
     width: calc(50px + (86 - 50) * ((100vw - 320px) / 1400));
     top: -5%;
     right: -8px;
+    animation: logoMove 2s ease-in;
+}
+
+@keyframes logoMove {
+    0% {
+        right: 100px;
+        top: -25%;
+    }
+    20% {
+        right: 80px;
+        top: 38%;
+    }
+    40% {
+        right: 60px;
+        top: -25%;
+    }
+    60% {
+        right: 40px;
+        top: 38%;
+    }
+    80% {
+        right: 20px;
+        top: -25%;
+    }
+    90% {
+        right: 2px;
+        top: 38%;
+    }
+    100% {
+        right: -8px;
+        top: -5%;
+    }
 }
