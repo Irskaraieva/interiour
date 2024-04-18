@@ -64,6 +64,7 @@
     padding: 20px 20px;
     display: flex;
     flex-direction: column;
+    text-align: start;
     justify-content: space-between;
     gap: 20px;
 
@@ -102,16 +103,11 @@
       font-weight: 300;
       font-size: 16px;
       color: rgba(0, 0, 0, 0.39);
-      white-space: nowrap;
-      overflow: hidden;
-      max-width: 160px;
-      text-overflow: ellipsis;
     }
 
     .price-wrapper {
       display: flex;
       flex-direction: column;
-
       gap: 20px;
 
       @media (max-width: 600px) {
@@ -185,6 +181,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0px 30px;
+  text-align: start;
 
   h3 {
     font-family: var(--font-family);
