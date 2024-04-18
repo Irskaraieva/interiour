@@ -37,7 +37,11 @@ function Navbar() {
                         </NavLink>
                     </li>
                     <li><span className='vertical-line'></span></li>
-                    <li><span className='new-items'> New Items</span></li>
+                    <li>
+                        <NavLink to={'/products'}>
+                            <span className='new-items'> New Items</span>
+                        </NavLink>                        
+                    </li>
                     <li><span className='vertical-line'></span></li>
                     <li><img className='bell' src={bell} alt='search-img' /></li>
                     <li><span className='vertical-line'></span></li>
