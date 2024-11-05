@@ -74,28 +74,6 @@ const Filters = () => {
                     }
                 </div>
             </div>
-
-            {/* <div className='filter-wraper'>
-                <div className='is-flex' onClick={handleOpenProd}>
-                    <span>Products</span>
-                    <img src={arrow} alt='arrow' className={arrowProdClass} />
-                </div>
-                <div className={filterProdClass}>
-                    {hasProducts ? (
-                        displayedProducts.map((prodItem, index) => (
-                            <div key={index} className={`filter-store-item ${checkedItemsProd.includes(prodItem.name) ? 'checked' : ''}`} onClick={() => handleItemClickProd(prodItem)}>
-                                <div className={`check-box ${checkedItemsProd.includes(prodItem.name) ? 'checked' : ''}`}>
-                                    {checkedItemsProd.includes(prodItem.name) && <img src={mark} alt='mark' />}
-                                </div>
-                                <span>{prodItem.name} ({prodItem.quantity})</span>
-                            </div>
-                        ))
-                    ) : (
-                        <div className='text-info'>There is nothing here</div>
-                    )
-                    }
-                </div>
-            </div> */}
             <div className='filter-range'>
                 <span>Price Range</span>
                 <RangeSlider
