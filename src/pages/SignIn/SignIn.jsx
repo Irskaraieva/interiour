@@ -225,7 +225,7 @@ const SignIn = () => {
                 ) : (
                     <>
                         <h5 className="">
-                            You have successfully registered!
+                            Welcome, {isRegisteredUser.displayName || isRegisteredUser.email}!
                         </h5>
 
                         <Link to={'/'} className="home-page">
